@@ -17,7 +17,6 @@ class SentryUserSeederCus extends Seeder
             'email'    => 'admin@admin.com',
             'username' => 'admin',
             'password' => 'sentryadmin',
-            'activated' => 1,
         ));
 
         Sentry::getUserProvider()->create(array(
