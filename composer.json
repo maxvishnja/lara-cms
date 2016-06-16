@@ -22,11 +22,12 @@
     },
     "autoload": {
         "classmap": [
-            "database"
+            "database",
+            "packages/rydurham/sentinel/src/controllers"
         ],
         "psr-4": {
             "App\\": "app/",
-            "Sentinel\\": "Package/rydurham/sentinel/src"
+            "Sentinel\\": "packages/rydurham/sentinel/src"
         }
     },
     "autoload-dev": {

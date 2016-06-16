@@ -1,5 +1,7 @@
 <?php
 
+use Sentinel\Controllers;
+
 /*
 |--------------------------------------------------------------------------
 | Sentinel Package Routes

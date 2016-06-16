@@ -29,7 +29,7 @@
             "tests"
         ],
         "psr-4": {
-            "Sentinel\\": "src/Sentinel"
+            "Sentinel\\": "src/"
         }
     },
     "minimum-stability": "stable"
