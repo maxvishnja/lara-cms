@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', array('as' => 'home', function()
-{
-    return View::make('welcome');
+Route::get('/', array('as' => 'home',
+    'middleware' => 'sentry.auth', function () {
+    return View::make('modules/main.index');
 }));

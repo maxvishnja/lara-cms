@@ -22,14 +22,18 @@ elixir(function(mix) {
             '/google-code-prettify/src/prettify.js'
         ], "public/js/dependencies.js", "resources/assets/template/vendors")
         .scripts([
-            'resources/assets/template/build/js/custom.min.js',
-            'resources/assets/js/app.js'
-        ], "public/js/app.js")
+            'template/build/js/custom.min.js',
+            'js/app.js'
+        ], "public/js/app.js", "resources/assets/")
         //.sass('app.scss')
         .styles([
-            'resources/assets/template/build/css/custom.min.css',
-            'resources/assets/css/app.js'
-        ], 'public/css/app.css')
+            'template/vendors/bootstrap/dist/css/bootstrap.min.css',
+            'template/vendors/font-awesome/css/font-awesome.min.css',
+            'template/vendors/iCheck/skins/flat/green.css',
+            'template/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css',
+            'template/build/css/custom.min.css',
+            'css/app.css'
+        ], 'public/css/app.css', "resources/assets/")
         .browserSync({
             proxy: 'local-crm.dev'
         });
