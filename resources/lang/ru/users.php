@@ -4,7 +4,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Authentication Language Lines
+    | Users Language Lines
     |--------------------------------------------------------------------------
     |
     | The following language lines are used during authentication for various
@@ -13,13 +13,7 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'title' => 'Сотрудники',
 
-    'login-page-title' => 'Вход',
-    'field-email' => 'Email или Логин',
-    'field-password' => 'Пароль',
-    'field-submit' => 'Войти',
-    'forgot-password' => 'Забыли пароль?',
 
 ];

@@ -93,4 +93,8 @@
 .has-error input[type=text], .has-error input[type=password] {
     border-color: red !important;
 }
+
+.profile_details:nth-child(3n) {
+    clear: initial;
+}
 /*# sourceMappingURL=app.css.map */

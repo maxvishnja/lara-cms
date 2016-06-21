@@ -2,6 +2,7 @@
 
 namespace Sentinel\Controllers;
 
+use Illuminate\Support\Facades\Mail;
 use View;
 use Event;
 use Config;
@@ -28,17 +29,23 @@ class UserController extends BaseController
     use SentinelRedirectionTrait;
     use SentinelViewfinderTrait;
 
+    protected $sentry;
+
     /**
      * Constructor
      */
     public function __construct(
         SentinelUserRepositoryInterface $userRepository,
         SentinelGroupRepositoryInterface $groupRepository,
-        HashidsManager $hashids
+        HashidsManager $hashids,
+        \Cartalyst\Sentry\Sentry $sentry
     ) {
         $this->userRepository  = $userRepository;
         $this->groupRepository = $groupRepository;
         $this->hashids         = $hashids;
+
+        $this->sentry     = $sentry;
+        $this->throttleProvider = $this->sentry->getThrottleProvider();
 
         // You must have admin access to proceed
         $this->middleware('sentry.admin');
@@ -53,6 +60,29 @@ class UserController extends BaseController
     {
         // Get a paginated set of users
         $users = Sentry::getUserProvider()->createModel()->paginate(15);
+
+        foreach ($users as $user) {
+            if ($user->isActivated()) {
+                $user->status = "Active";
+            } else {
+                $user->status = "Not Active";
+            }
+
+            //Pull Suspension & Ban info for this user
+            $throttle = $this->throttleProvider->findByUserId($user->id);
+
+            //Check for suspension
+            if ($throttle->isSuspended()) {
+                // User is Suspended
+                $user->status = "Suspended";
+            }
+
+            //Check for ban
+            if ($throttle->isBanned()) {
+                // User is Banned
+                $user->status = "Banned";
+            }
+        }
 
         return $this->viewFinder('Sentinel::users.index', ['users' => $users]);
     }
@@ -80,6 +110,10 @@ class UserController extends BaseController
 
         // Determine response message based on whether or not the user was activated
         $message = ($result->getPayload()['activated'] ? trans('Sentinel::users.addedactive') : trans('Sentinel::users.added'));
+        Mail::send('emails.registrationData', ['username' => $request->username, 'password' => $request->password], function($message) use ($request) {
+            $message->from('us@example.com', 'CRM PNK');
+            $message->to($request->email)->subject('Данные для входа в систему');
+        });
 
         // Finished!
         return $this->redirectTo('users_store', ['success' => $message]);
