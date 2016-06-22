@@ -6,6 +6,8 @@
     {{ trans('users.title') }}
 @stop
 
+
+
 {{-- Content --}}
 @section('content')
     <div class="row">
