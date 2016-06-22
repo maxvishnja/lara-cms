@@ -13,7 +13,7 @@
         <div class='page-header'>
             <div class='btn-toolbar '>
                 <div class='btn-group'>
-                    <a class='btn btn-primary' href="{{ route('sentinel.groups.create') }}">Create Group</a>
+                    <a class='btn btn-primary' href="{{ route('sentinel.groups.create') }}"><i class="fa fa-plus-circle" aria-hidden="true"></i> {{ trans('users.group-create') }}</a>
                 </div>
             </div>
         </div>
@@ -23,9 +23,9 @@
         <div class="table-responsive">
             <table class="table table-striped table-hover">
                 <thead>
-                    <th>Name</th>
-                    <th>Permissions</th>
-                    <th>Options</th>
+                    <th>{{ trans('users.group-table-name') }}</th>
+                    <th>{{ trans('users.group-table-permissions') }}</th>
+                    <th>{{ trans('users.group-table-actions') }}</th>
                 </thead>
                 <tbody>
                 @foreach ($groups as $group)

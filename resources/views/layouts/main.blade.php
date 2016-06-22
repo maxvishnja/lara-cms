@@ -292,16 +292,14 @@
 @stack('scripts')
 <script>
     $(document).ready(function () {
-        $('.confirm').on('click', function(e) {
-            e.preventDefault();
+        $('.confirm').on('click', function() {
             $.confirm({
-                title: 'Вы уверены,',
-                content: 'Удалить данные?',
+                title: '{{ trans('actions.confirm-title') }}',
+                content: ' ',
+                confirmButton: '{{ trans('actions.confirm-but-yes') }}',
+                cancelButton: '{{ trans('actions.confirm-but-no') }}',
                 confirm: function(){
-
-                },
-                cancel: function(){
-                    e.preventDefault();
+                    restfulize();
                 }
             });
         });

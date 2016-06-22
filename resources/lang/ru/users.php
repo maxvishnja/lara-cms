@@ -14,6 +14,10 @@ return [
     */
 
     'title' => 'Сотрудники',
+    'group-create' => 'Добавить группу',
+    'group-table-name' => 'Название',
+    'group-table-permissions' => 'Разрешения',
+    'group-table-actions' => 'Действия',
 
 
 ];

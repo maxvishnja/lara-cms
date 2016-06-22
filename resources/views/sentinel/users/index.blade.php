@@ -52,7 +52,7 @@
                                     onClick="location.href='{{ route('sentinel.users.unban', array($user->hash)) }}'"
                                     title="{{ trans('actions.unban') }}"><i class="fa fa-unlock"> </i></button>
                         @endif
-                        <button class="btn btn-danger btn-sm action_confirm"
+                        <button class="btn btn-danger btn-sm confirm"
                                 href="{{ route('sentinel.users.destroy', array($user->hash)) }}"
                                 data-token="{{ Session::getToken() }}" data-method="delete"
                                 title="{{ trans('actions.delete') }}"><i class="fa fa-remove"> </i></button>
