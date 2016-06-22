@@ -1,31 +1,26 @@
-@extends(config('sentinel.layout'))
+@extends('layouts.main')
 
 {{-- Web site Title --}}
 @section('title')
-@parent
-View Group
+    @parent
+    @lang('users.page_group-show_title')
 @stop
 
 {{-- Content --}}
 @section('content')
-<h4>{{ $group['name'] }} Group</h4>
-<div class="well clearfix">
-	<div class="col-md-10">
-	    <strong>Permissions:</strong>
-	    <ul>
-	    	@foreach ($group->getPermissions() as $key => $value)
-	    		<li>{{ ucfirst($key) }}</li>
-	    	@endforeach
-	    </ul>
-	</div>
-	<div class="col-md-2">
-		<a class="btn btn-primary" href="{{ route('sentinel.groups.edit', array($group->hash)) }}">Edit Group</a>
-	</div> 
-</div>
-<hr />
-<h4>Group Object</h4>
-<div>
-    {{ var_dump($group) }}
-</div>
+    <h3>{{ $group['name'] }}</h3>
+    <div class="well clearfix">
+        <div class="col-md-10">
+            <strong>{{ trans('users.group-field-permissions') }}:</strong>
+            <ul>
+                @foreach ($group->getPermissions() as $key => $value)
+                    <li>{{ ucfirst($key) }}</li>
+                @endforeach
+            </ul>
+        </div>
+        <div class="col-md-2">
+            <a class="btn btn-primary" href="{{ route('sentinel.groups.edit', array($group->hash)) }}">{{ trans('actions.edit') }}</a>
+        </div>
+    </div>
 
 @stop

@@ -33,6 +33,7 @@ function restfulize() {
 
 }
 
+
 $(document).ready(function () {
     function initToolbarBootstrapBindings() {
         var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Courier',
@@ -97,6 +98,8 @@ $(document).ready(function () {
     $('#compose, .compose-close').click(function () {
         $('.compose').slideToggle();
     });
+
+    //$SIDEBAR_MENU.find('a[href="' + CURRENT_URL + '"]').parent('li').addClass('current-page');
 
 });
 //# sourceMappingURL=app.js.map

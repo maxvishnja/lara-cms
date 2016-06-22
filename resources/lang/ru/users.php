@@ -14,10 +14,17 @@ return [
     */
 
     'title' => 'Сотрудники',
+
+    // Users group
+    'page_group-index_title' => 'Группы пользователей',
+    'page_group-create_title' => 'Создать группу',
+    'page_group-edit_title' => 'Изменить группу',
+    'page_group-show_title' => 'Просмотр группы',
+
     'group-create' => 'Добавить группу',
-    'group-table-name' => 'Название',
-    'group-table-permissions' => 'Разрешения',
-    'group-table-actions' => 'Действия',
+    'group-field-name' => 'Название',
+    'group-field-permissions' => 'Разрешения',
+    'group-field-actions' => 'Действия',
 
 
 ];
