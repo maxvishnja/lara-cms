@@ -12,7 +12,7 @@
 @section('content')
     <div class="row">
         <div class='page-header'>
-            <a class='btn btn-primary' href="{{ route('sentinel.users.create') }}">Create User</a>
+            <a class='btn btn-success' href="{{ route('sentinel.users.create') }}">{!! trans('actions.user-create') !!}</a>
         </div>
     </div>
 
@@ -23,7 +23,7 @@
                 <div class="col-sm-12">
                     <h4 class="brief"><i>Digital Strategist</i></h4>
                     <div class="left col-xs-7">
-                        <h2>Nicole Pearson</h2>
+                        <h2>{{ $user->first_name }} {{ $user->last_name }}</h2>
                         <ul class="list-unstyled">
                             <li><i class="fa fa-envelope"></i> Email: {{ $user->email }}</li>
                             <li><i class="fa fa-phone"></i> Phone #: </li>

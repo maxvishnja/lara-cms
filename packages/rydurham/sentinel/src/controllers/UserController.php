@@ -111,7 +111,7 @@ class UserController extends BaseController
         // Determine response message based on whether or not the user was activated
         $message = ($result->getPayload()['activated'] ? trans('Sentinel::users.addedactive') : trans('Sentinel::users.added'));
         Mail::send('emails.registrationData', ['username' => $request->username, 'password' => $request->password], function($message) use ($request) {
-            $message->from('us@example.com', 'CRM PNK');
+            $message->from('us@example.com', 'CRM');
             $message->to($request->email)->subject('Данные для входа в систему');
         });
 

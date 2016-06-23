@@ -20,10 +20,15 @@ return [
     'save' => 'Сохранить',
     'ban' => 'Заблокировать',
     'unban' => 'Разблокировать',
+    'restore' => 'Восстановить',
+    'confirm' => 'Подтвердить',
 
     'confirm-title' => 'Уверены, что хотите выполнить это действие?',
     'confirm-but-yes' => 'Да',
     'confirm-but-no' => 'Отмена',
+
+    'group-create' => '<i class="fa fa-plus-circle" aria-hidden="true"></i> Добавить группу',
+    'user-create' => '<i class="fa fa-plus-circle" aria-hidden="true"></i> Добавить пользователя',
 
 
 ];

@@ -22,7 +22,7 @@ elixir(function(mix) {
             '/google-code-prettify/src/prettify.js',
             '/pnotify/dist/pnotify.js',
             '/pnotify/dist/pnotify.buttons.js',
-            '/pnotify/dist/pnotify.nonblock.js'
+            '/pnotify/dist/pnotify.nonblock.js',
         ], "public/js/dependencies.js", "resources/assets/template/vendors")
         .scripts([
             'jquery-confirm/dist/jquery-confirm.min.js'

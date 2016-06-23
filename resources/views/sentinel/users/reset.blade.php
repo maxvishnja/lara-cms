@@ -1,35 +1,41 @@
-@extends(config('sentinel.layout'))
+@extends('layouts.login')
 
-{{-- Web site Title --}}
 @section('title')
-@parent
-Reset Password
+    @parent
+    @lang('users.page_user-reset_pass_title')
 @stop
 
-{{-- Content --}}
 @section('content')
-<div class="row">
-    <div class="col-md-4 col-md-offset-4">
-        <form method="POST" action="{{ route('sentinel.reset.password', [$hash, $code]) }}" accept-charset="UTF-8">
 
-            <h2>Reset Your Password</h2>
+    <div class="animate form login_form_forgot">
+        <section class="login_content">
 
-            <div class="form-group {{ ($errors->has('password')) ? 'has-error' : '' }}">
-                <input class="form-control" placeholder="New Password" name="password" type="password" />
-                {{ ($errors->has('password') ? $errors->first('password') : '') }}
-            </div>
+            <form method="POST" action="{{ route('sentinel.reset.password', [$hash, $code]) }}" accept-charset="UTF-8">
 
-            <div class="form-group {{ ($errors->has('password_confirmation')) ? 'has-error' : '' }}">
-                <input class="form-control" placeholder="Confirm Password" name="password_confirmation" type="password" />
-                {{ ($errors->has('password_confirmation') ? $errors->first('password_confirmation') : '') }}
-            </div>
+                <h1>{{ trans('users.page_user-reset_pass_title') }}</h1>
 
-            <input name="_token" value="{{ csrf_token() }}" type="hidden">
+                <div class="form-group {{ ($errors->has('password')) ? 'has-error' : '' }}">
+                    <input class="form-control" placeholder="{{ trans('users.user-field-pass-new') }}" name="password" type="password"/>
+                    @if($errors->has('password'))
+                        <div class="alert alert-danger text-left ptb5">{{ $errors->first('password') }}</div>
+                    @endif
+                </div>
 
-            <input class="btn btn-primary" value="Reset Password" type="submit">
+                <div class="form-group {{ ($errors->has('password_confirmation')) ? 'has-error' : '' }}">
+                    <input class="form-control" placeholder="{{ trans('users.user-field-confirm-pass') }}" name="password_confirmation"
+                           type="password"/>
+                    @if($errors->has('password_confirmation'))
+                        <div class="alert alert-danger text-left ptb5">{{ $errors->first('password_confirmation') }}</div>
+                    @endif
+                </div>
 
-        </form>
-  	</div>
-</div>
+                <input name="_token" value="{{ csrf_token() }}" type="hidden">
+
+                <input class="btn btn-primary" value="{{ trans('actions.confirm') }}" type="submit">
+
+            </form>
+
+        </section>
+    </div>
 
 @stop

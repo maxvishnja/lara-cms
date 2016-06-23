@@ -13,7 +13,7 @@
         <div class='page-header'>
             <div class='btn-toolbar '>
                 <div class='btn-group'>
-                    <a class='btn btn-success' href="{{ route('sentinel.groups.create') }}"><i class="fa fa-plus-circle" aria-hidden="true"></i> {{ trans('users.group-create') }}</a>
+                    <a class='btn btn-success' href="{{ route('sentinel.groups.create') }}">{!! trans('actions.group-create') !!}</a>
                 </div>
             </div>
         </div>

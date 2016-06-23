@@ -80,6 +80,10 @@
     padding-bottom: 5px;
 }
 
+.mt5 {
+    margin-top: 5px;
+}
+
 .login_content form input[type="submit"]{
      float: none;
 }
@@ -100,4 +104,27 @@
 .profile_details:nth-child(3n) {
     clear: initial;
 }
+
+.checkbox label, .radio label {
+     padding-left: 0;
+}
+
+.checkbox-inline, .radio-inline {
+    padding-right: 20px;
+    padding-left: 0;
+}
+
+.btn {
+    margin-bottom: 0;
+}
+
+
+.login_form_forgot h1:before, .login_form_forgot h1:after {
+    width: 14%;
+}
+
+.login_form_forgot form input[type="submit"]{
+     margin-left: 0;
+}
+
 /*# sourceMappingURL=app.css.map */

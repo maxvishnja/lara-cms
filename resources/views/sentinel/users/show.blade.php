@@ -1,9 +1,9 @@
-@extends(config('sentinel.layout'))
+@extends('layouts.main')
 
 {{-- Web site Title --}}
 @section('title')
 @parent
-Home
+@lang('users.user-profile')
 @stop
 
 {{-- Content --}}
@@ -18,27 +18,25 @@ Home
         }
     ?>
 
-	<h4>Account Profile</h4>
-	
   	<div class="well clearfix">
 	    <div class="col-md-8">
 		    @if ($user->first_name)
-		    	<p><strong>First Name:</strong> {{ $user->first_name }} </p>
+		    	<p><strong>{{ trans('users.user-first-name') }}:</strong> {{ $user->first_name }} </p>
 			@endif
 			@if ($user->last_name)
-		    	<p><strong>Last Name:</strong> {{ $user->last_name }} </p>
+		    	<p><strong>{{ trans('users.user-last-name') }}:</strong> {{ $user->last_name }} </p>
 			@endif
-		    <p><strong>Email:</strong> {{ $user->email }}</p>
+		    <p><strong>{{ trans('users.user-field-email') }}:</strong> {{ $user->email }}</p>
 		    
 		</div>
 		<div class="col-md-4">
-			<p><em>Account created: {{ $user->created_at }}</em></p>
-			<p><em>Last Updated: {{ $user->updated_at }}</em></p>
-			<button class="btn btn-primary" onClick="location.href='{{ $editAction }}'">Edit Profile</button>
+			<p><em>{{ trans('users.user-account-created') }}: {{ $user->created_at }}</em></p>
+			<p><em>{{ trans('users.user-last-updated') }}: {{ $user->updated_at }}</em></p>
+			<button class="btn btn-success" onClick="location.href='{{ $editAction }}'">{{ trans('actions.edit') }}</button>
 		</div>
 	</div>
 
-	<h4>Group Memberships:</h4>
+	<h4>{{ trans('users.user-groups') }}:</h4>
 	<?php $userGroups = $user->getGroups(); ?>
 	<div class="well">
 	    <ul>
@@ -47,16 +45,9 @@ Home
 					<li>{{ $group['name'] }}</li>
 				@endforeach
 			@else 
-				<li>No Group Memberships.</li>
+				<li>{{ trans('users.user-no-groups') }}</li>
 			@endif
 	    </ul>
-	</div>
-	
-	<hr />
-
-	<h4>User Object</h4>
-	<div>
-		<p>{{ var_dump($user) }}</p>
 	</div>
 
 @stop

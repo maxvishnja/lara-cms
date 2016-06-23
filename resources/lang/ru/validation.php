@@ -144,7 +144,7 @@ return array(
 
         'newPassword_confirmation' => array(
 
-            'required' => 'Вы должны подтвердить ваш новый пароль.',
+            'required' => 'Вы должны подтвердить новый пароль.',
 
         ),
 
@@ -157,16 +157,27 @@ return array(
         ),
 
         'email' => array(
-            'required' => 'Введите Ваш e-mail адрес!',
+            'required' => 'Введите E-mail адрес!',
         ),
 
         'password' => array(
             'required' => 'Введите пароль!',
+            'min' => 'Пароль должен иметь длину не менее 8 символов.',
+            "confirmed"        => "Пароли не совпадают.",
         ),
 
         'name' => array(
             'required' => 'Название обязательное поле!',
         ),
+
+        'username' => array(
+            'required' => 'Введите логин!',
+        ),
+
+        'password_confirmation' => array(
+            'required' => 'Подтвердите пароль!',
+        ),
+
 
     ),
 

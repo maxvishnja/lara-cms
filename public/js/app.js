@@ -101,5 +101,14 @@ $(document).ready(function () {
 
     //$SIDEBAR_MENU.find('a[href="' + CURRENT_URL + '"]').parent('li').addClass('current-page');
 
+
+    if ($(".checkbox input")[0]) {
+        $('.checkbox input').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass: 'iradio_flat-green'
+        });
+    }
+
+
 });
 //# sourceMappingURL=app.js.map
