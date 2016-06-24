@@ -19,10 +19,10 @@
                 </div>
 
                 <label for="Permissions">{{ trans('users.group-field-permissions') }}</label>
-                <div class="form-group">
+                <div class="form-group checkbox">
                     <?php $defaultPermissions = config('sentinel.default_permissions', []); ?>
                     @foreach ($defaultPermissions as $permission)
-                        <label class="checkbox-inline">
+                        <label class="checkbox-inline ">
                             <input name="permissions[{{ $permission }}]" value="1"
                                    type="checkbox" {{ (isset($permissions[$permission]) ? 'checked' : '') }}>
                             {{ ucwords($permission) }}
@@ -32,10 +32,20 @@
 
                 <input name="_method" value="PUT" type="hidden">
                 <input name="_token" value="{{ csrf_token() }}" type="hidden">
-                <input class="btn btn-primary" value="{{ trans('actions.save') }}" type="submit">
+                <input class="btn btn-success" value="{{ trans('actions.save') }}" type="submit">
 
             </form>
         </div>
     </div>
 
-@stop
+    @stop
+
+    @push('styles')
+    <!-- iCheck -->
+    <link href="/libs/iCheck/skins/flat/green.css" rel="stylesheet">
+    @endpush
+
+    @push('scripts')
+    <!-- iCheck -->
+    <script src="/libs/iCheck/icheck.min.js"></script>
+    @endpush

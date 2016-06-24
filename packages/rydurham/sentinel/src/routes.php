@@ -29,10 +29,10 @@ Route::group(['namespace' => 'Sentinel\Controllers', 'middleware' => ['web']], f
     Route::post('reset/{hash}/{code}', ['as' => 'sentinel.reset.password', 'uses' => 'RegistrationController@resetPassword']);
 
     // Sentinel Profile
-    Route::get('profile', ['as' => 'sentinel.profile.show', 'uses' => 'ProfileController@show']);
-    Route::get('profile/edit', ['as' => 'sentinel.profile.edit', 'uses' => 'ProfileController@edit']);
-    Route::put('profile', ['as' => 'sentinel.profile.update', 'uses' => 'ProfileController@update']);
-    Route::post('profile/password', ['as' => 'sentinel.profile.password', 'uses' => 'ProfileController@changePassword']);
+    Route::get('users/profile', ['as' => 'sentinel.profile.show', 'uses' => 'ProfileController@show']);
+    Route::get('users/profile/edit', ['as' => 'sentinel.profile.edit', 'uses' => 'ProfileController@edit']);
+    Route::put('users/profile', ['as' => 'sentinel.profile.update', 'uses' => 'ProfileController@update']);
+    Route::post('users/profile/password', ['as' => 'sentinel.profile.password', 'uses' => 'ProfileController@changePassword']);
 
     // Sentinel Users
     Route::get('users', ['as' => 'sentinel.users.index', 'uses' => 'UserController@index']);

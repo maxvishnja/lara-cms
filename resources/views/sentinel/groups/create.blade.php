@@ -14,13 +14,14 @@
 
 
                 <div class="form-group {{ ($errors->has('name')) ? 'has-error' : '' }}">
-                    <input class="form-control" placeholder="{{ trans('users.group-field-name') }}" name="name" type="text"
+                    <input class="form-control" placeholder="{{ trans('users.group-field-name') }}" name="name"
+                           type="text"
                            value="{{ Request::old('email') }}">
                     {{ ($errors->has('name') ? $errors->first('name') : '') }}
                 </div>
 
                 <label for="Permissions">{{ trans('users.group-field-permissions') }}</label>
-                <div class="form-group">
+                <div class="form-group checkbox">
                     <?php $defaultPermissions = config('sentinel.default_permissions', []); ?>
                     @foreach ($defaultPermissions as $permission)
                         <label class="checkbox-inline">
@@ -34,7 +35,7 @@
                 </div>
 
                 <input name="_token" value="{{ csrf_token() }}" type="hidden">
-                <input class="btn btn-primary" value="{{ trans('actions.save') }}" type="submit">
+                <input class="btn btn-success" value="{{ trans('actions.save') }}" type="submit">
 
             </form>
 
@@ -42,3 +43,13 @@
     </div>
 
 @stop
+
+@push('styles')
+<!-- iCheck -->
+<link href="/libs/iCheck/skins/flat/green.css" rel="stylesheet">
+@endpush
+
+@push('scripts')
+<!-- iCheck -->
+<script src="/libs/iCheck/icheck.min.js"></script>
+@endpush
