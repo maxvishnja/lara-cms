@@ -41,18 +41,15 @@
 
                 <!-- /menu footer buttons -->
                 <div class="sidebar-footer hidden-small">
-                    <a data-toggle="tooltip" data-placement="top" title="Settings">
-                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                    </a>
-                    <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                        <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-                    </a>
-                    <a data-toggle="tooltip" data-placement="top" title="Lock">
-                        <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                    </a>
-                    <a data-toggle="tooltip" data-placement="top" title="Logout">
-                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                    </a>
+                    @if (Sentry::check())
+                        <a data-toggle="tooltip" data-placement="top" title="{{ trans('navigation.top_settings') }}">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+                        <a href="{{ route('sentinel.logout') }}" data-toggle="tooltip" data-placement="top"
+                           title="{{ trans('navigation.top_logout') }}">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a>
+                    @endif
                 </div>
                 <!-- /menu footer buttons -->
             </div>
@@ -71,85 +68,26 @@
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                    aria-expanded="false">
-                                    <img src="/images/img.jpg" alt="">John Doe
+                                    <img src="/images/img.jpg"
+                                         alt="">{{ Sentry::getUser()->first_name }} {{ Sentry::getUser()->last_name }}
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">
 
-                                    <li><a href="{{ route('sentinel.profile.show') }}">{{ trans('navigation.top_profile') }}</a></li>
-                                    <li><a href="#">{{ trans('navigation.top_settings') }}</a></li>
-                                    <li><a href="{{ route('sentinel.logout') }}"><i class="fa fa-sign-out pull-right"></i> Logout</a></li>
+                                    <li><a href="{{ route('sentinel.profile.show') }}"><i
+                                                    class="fa fa-user pull-right"></i> {{ trans('navigation.top_profile') }}
+                                        </a></li>
+                                    <li><a href="#"><i
+                                                    class="fa fa-cog pull-right"></i> {{ trans('navigation.top_settings') }}
+                                        </a></li>
+                                    <li><a href="{{ route('sentinel.logout') }}"><i
+                                                    class="fa fa-sign-out pull-right"></i> {{ trans('navigation.top_logout') }}
+                                        </a></li>
                                 </ul>
 
                             </li>
                         @endif
-
-                        <li role="presentation" class="dropdown">
-                            <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown"
-                               aria-expanded="false">
-                                <i class="fa fa-envelope-o"></i>
-                                <span class="badge bg-green">6</span>
-                            </a>
-                            <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                                <li>
-                                    <a>
-                                        <span class="image"><img src="/images/img.jpg" alt="Profile Image"/></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                                        <span class="image"><img src="/images/img.jpg" alt="Profile Image"/></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                                        <span class="image"><img src="/images/img.jpg" alt="Profile Image"/></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                                        <span class="image"><img src="/images/img.jpg" alt="Profile Image"/></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <div class="text-center">
-                                        <a>
-                                            <strong>See All Alerts</strong>
-                                            <i class="fa fa-angle-right"></i>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
                     </ul>
                 </nav>
             </div>

@@ -15,5 +15,6 @@ return [
 
     'top_profile' => 'Профиль',
     'top_settings' => 'Настройки',
+    'top_logout' => 'Выйти',
 
 ];

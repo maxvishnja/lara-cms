@@ -99,8 +99,20 @@ $(document).ready(function () {
         $('.compose').slideToggle();
     });
 
-    //$SIDEBAR_MENU.find('a[href="' + CURRENT_URL + '"]').parent('li').addClass('current-page');
+    console.log(CURRENT_URL);
 
+
+    $SIDEBAR_MENU.find('a[href="' + CURRENT_URL + '"]').parent('li').addClass('current-page');
+    $SIDEBAR_MENU.find('a').filter(function () {
+
+        var currentLink = this.href;
+        var current = CURRENT_URL.indexOf(currentLink);
+
+        if (currentLink !== '' && current === 0) {
+            return this.href;
+        }
+
+    }).parent('li').addClass('current-page').parents('ul').slideDown().parent().addClass('active');
 
     if ($(".checkbox input")[0]) {
         $('.checkbox input').iCheck({
