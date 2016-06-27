@@ -10,7 +10,8 @@
         "illuminate/support": "5.2.*@dev",
         "illuminate/contracts": "5.2.*@dev",
         "cartalyst/sentry": "2.1.*",
-        "vinkla/hashids": "~2.0"
+        "vinkla/hashids": "~2.0",
+        "intervention/image": "^2.3"
 
     },
     "require-dev": {

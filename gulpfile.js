@@ -23,13 +23,16 @@ elixir(function(mix) {
             '/pnotify/dist/pnotify.js',
             '/pnotify/dist/pnotify.buttons.js',
             '/pnotify/dist/pnotify.nonblock.js',
+            '/moment/moment.js',
+            '/bootstrap-daterangepicker/daterangepicker.js',
         ], "public/js/dependencies.js", "resources/assets/template/vendors")
         .scripts([
             'jquery-confirm/dist/jquery-confirm.min.js'
         ], "public/js/modules.js", "node_modules")
         .scripts([
             'template/build/js/custom.min.js',
-            'js/app.js'
+            'js/app.js',
+            'js/users.js'
         ], "public/js/app.js", "resources/assets/")
         //.sass('app.scss')
         .styles([

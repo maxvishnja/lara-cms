@@ -15,6 +15,7 @@ use Sentinel\DataTransferObjects\BaseResponse;
 use Sentinel\DataTransferObjects\SuccessResponse;
 use Sentinel\DataTransferObjects\FailureResponse;
 use Sentinel\DataTransferObjects\ExceptionResponse;
+use Image;
 
 class SentryUserRepository implements SentinelUserRepositoryInterface, UserProvider
 {
@@ -27,8 +28,8 @@ class SentryUserRepository implements SentinelUserRepositoryInterface, UserProvi
      */
     public function __construct(Sentry $sentry, Repository $config, Dispatcher $dispatcher)
     {
-        $this->sentry     = $sentry;
-        $this->config     = $config;
+        $this->sentry = $sentry;
+        $this->config = $config;
         $this->dispatcher = $dispatcher;
 
         // Get the Throttle Provider
@@ -126,17 +127,25 @@ class SentryUserRepository implements SentinelUserRepositoryInterface, UserProvi
      */
     public function update($data)
     {
+
         try {
             // Find the user using the user id
             $user = $this->sentry->findUserById($data['id']);
 
             // Update User Details
-            $user->email    = (isset($data['email']) ? e($data['email']) : $user->email);
+            $user->email = (isset($data['email']) ? e($data['email']) : $user->email);
             $user->username = (isset($data['username']) ? e($data['username']) : $user->username);
 
             // Are there additional fields specified in the config? If so, update them here.
             foreach ($this->config->get('sentinel.additional_user_fields', []) as $key => $value) {
                 $user->$key = (isset($data[$key]) ? e($data[$key]) : $user->$key);
+            }
+
+            if (\Request::hasFile('avatar')) {
+                $avatar = \Request::file('avatar');
+                $filename = time() . '.' . $avatar->getClientOriginalExtension();
+                Image::make($avatar)->resize(300, 300)->save(public_path('upload/avatars/' . $filename));
+                $user->avatar = 'upload/avatars/' . $filename;
             }
 
             // Update the user

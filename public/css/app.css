@@ -84,6 +84,10 @@
     margin-top: 5px;
 }
 
+.mb20 {
+    margin-bottom: 20px;
+}
+
 .login_content form input[type="submit"]{
      float: none;
 }

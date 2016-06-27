@@ -35,6 +35,9 @@ function restfulize() {
 
 
 $(document).ready(function () {
+
+    // Template scripts
+
     function initToolbarBootstrapBindings() {
         var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Courier',
                 'Courier New', 'Comic Sans MS', 'Helvetica', 'Impact', 'Lucida Grande', 'Lucida Sans', 'Tahoma', 'Times',
@@ -99,8 +102,7 @@ $(document).ready(function () {
         $('.compose').slideToggle();
     });
 
-    console.log(CURRENT_URL);
-
+    // Menu slide
 
     $SIDEBAR_MENU.find('a[href="' + CURRENT_URL + '"]').parent('li').addClass('current-page');
     $SIDEBAR_MENU.find('a').filter(function () {
@@ -114,6 +116,8 @@ $(document).ready(function () {
 
     }).parent('li').addClass('current-page').parents('ul').slideDown().parent().addClass('active');
 
+    // Checkbox iCheck
+
     if ($(".checkbox input")[0]) {
         $('.checkbox input').iCheck({
             checkboxClass: 'icheckbox_flat-green',
@@ -121,6 +125,42 @@ $(document).ready(function () {
         });
     }
 
+    // Datepicker
+
+    $('.datepicker').daterangepicker({
+        singleDatePicker: true,
+        calender_style: "picker_4",
+        showDropdowns: true,
+        locale: {
+            format: "YYYY-MM-DD",
+            separator: " - ",
+            applyLabel: "Apply",
+            cancelLabel: "Cancel",
+            fromLabel: "From",
+            toLabel: "To",
+            customRangeLabel: "Custom",
+            daysOfWeek: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+            monthNames: [
+                "Январь",
+                "Февраль",
+                "Март",
+                "Апрель",
+                "Май",
+                "Июнь",
+                "Июль",
+                "Август",
+                "Сентябрь",
+                "Октябрь",
+                "Ноябрь",
+                "Декабрь"
+            ],
+            firstDay: 1
+        }
+    });
+
+
+});
+$(document).ready(function() {
 
 });
 //# sourceMappingURL=app.js.map

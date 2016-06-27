@@ -24,15 +24,15 @@
                 <!-- menu profile quick info -->
                 <div class="profile">
                     <div class="profile_pic">
-                        <img src="/images/img.jpg" alt="..." class="img-circle profile_img">
+                        <img src="/{{ Sentry::getUser()->avatar }}" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
-                        <span>Welcome,</span>
-                        <h2>John Doe</h2>
+                        <span>Добро пожаловать,</span>
+                        <h2>{{ Sentry::getUser()->first_name }} {{ Sentry::getUser()->last_name }}</h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
-
+                <div class="clearfix"></div>
                 <br/>
 
                 <!-- sidebar menu -->
@@ -68,7 +68,7 @@
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                    aria-expanded="false">
-                                    <img src="/images/img.jpg"
+                                    <img src="/{{ Sentry::getUser()->avatar }}"
                                          alt="">{{ Sentry::getUser()->first_name }} {{ Sentry::getUser()->last_name }}
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
