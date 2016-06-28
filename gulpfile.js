@@ -25,6 +25,7 @@ elixir(function(mix) {
             '/pnotify/dist/pnotify.nonblock.js',
             '/moment/moment.js',
             '/bootstrap-daterangepicker/daterangepicker.js',
+            '/bootstrap-progressbar/bootstrap-progressbar.min.js',
         ], "public/js/dependencies.js", "resources/assets/template/vendors")
         .scripts([
             'jquery-confirm/dist/jquery-confirm.min.js'

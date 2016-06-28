@@ -22,7 +22,17 @@
         <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
             <div class="well profile_view">
                 <div class="col-sm-12">
-                    <h4 class="brief"><i>Digital Strategist</i></h4>
+                    <?php $userGroups = $user->getGroups();
+                    $last = last(array_pluck($userGroups, 'name')); ?>
+                    <h4 class="brief">
+                        @if (count($userGroups) >= 1)
+                            @foreach ($userGroups as $group)
+                                <i>{{ $group['name'] == $last ? $group['name'] : $group['name'] . ',' }}</i>
+                            @endforeach
+                        @else
+                            <i>{{ trans('users.user-no-groups') }}</i>
+                        @endif
+                    </h4>
                     <div class="left col-xs-7">
                         <h2>{{ $user->first_name }} {{ $user->last_name }}</h2>
                         <ul class="list-unstyled">
