@@ -130,8 +130,8 @@
                 </div>
 
 
-                <div class="form-group">
-                    <div class="">
+                <div class="form-group text-right">
+                    <div class="col-md-12">
                         <input class="btn btn-success" value="{{ trans('actions.save') }}" type="submit">
                     </div>
                 </div>

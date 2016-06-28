@@ -28,7 +28,6 @@
                         <ul class="list-unstyled">
                             <li><i class="fa fa-envelope"></i> {{ $user->email }}</li>
                             {!! $user->phone ? '<li><i class="fa fa-phone"></i> '.$user->phone.' </li>' : '' !!}
-
                         </ul>
                     </div>
                     <div class="right col-xs-5 text-center">
