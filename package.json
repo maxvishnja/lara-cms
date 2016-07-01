@@ -5,11 +5,14 @@
     "dev": "gulp watch"
   },
   "devDependencies": {
+    "bootstrap-sass": "^3.3.0",
     "gulp": "^3.9.1",
     "laravel-elixir": "^5.0.0",
-    "bootstrap-sass": "^3.3.0"
+    "run-sequence": "^1.2.2"
   },
   "dependencies": {
-    "jquery-confirm": "^1.5.1"
+    "jquery-confirm": "^1.5.1",
+    "lodash": "^4.13.1",
+    "lodash._baseclone": "^4.5.7"
   }
 }

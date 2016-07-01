@@ -9,7 +9,7 @@
                             <li><a href="{{ action('\\Sentinel\Controllers\GroupController@index') }}">Группы</a></li>
                         </ul>
                     </li>
-                    <li><a href="index2.html">Покупатели</a></li>
+                    <li><a href="/customers">Покупатели</a></li>
                     <li><a href="index3.html">Поставщики</a></li>
                 </ul>
             </li>

@@ -30,6 +30,7 @@ return [
 
     'group-create' => '<i class="fa fa-plus-circle" aria-hidden="true"></i> Добавить группу',
     'user-create' => '<i class="fa fa-plus-circle" aria-hidden="true"></i> Добавить пользователя',
+    'customers-create' => '<i class="fa fa-plus-circle" aria-hidden="true"></i> Добавить покупателя',
 
 
 ];
