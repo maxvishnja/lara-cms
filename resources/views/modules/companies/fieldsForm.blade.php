@@ -1,5 +1,5 @@
 <div class="form-group {{ ($errors->has('name')) ? 'has-error' : '' }}">
-    {!! Form::label('name', trans('customers.field-name'), ['class' => 'col-sm-3 control-label']) !!}
+    {!! Form::label('name', trans('companies.field-name'), ['class' => 'col-sm-3 control-label']) !!}
     <div class="col-sm-9">
         {!! Form::text('name', null, ['class' => 'form-control', 'required'] ) !!}
         @if($errors->has('name'))
@@ -19,7 +19,7 @@
 </div>
 
 <div class="form-group {{ ($errors->has('phone')) ? 'has-error' : '' }}">
-    {!! Form::label('phone', trans('customers.field-phone'), ['class' => 'col-sm-3 control-label']) !!}
+    {!! Form::label('phone', trans('companies.field-phone'), ['class' => 'col-sm-3 control-label']) !!}
     <div class="col-sm-9">
         {!! Form::text('phone', null, ['class' => 'form-control']) !!}
         @if($errors->has('phone'))
@@ -29,7 +29,7 @@
 </div>
 
 <div class="form-group {{ ($errors->has('skype')) ? 'has-error' : '' }}">
-    {!! Form::label('skype', trans('customers.field-skype'), ['class' => 'col-sm-3 control-label']) !!}
+    {!! Form::label('skype', trans('companies.field-skype'), ['class' => 'col-sm-3 control-label']) !!}
     <div class="col-sm-9">
         {!! Form::text('skype', null, ['class' => 'form-control']) !!}
         @if($errors->has('skype'))
@@ -39,7 +39,7 @@
 </div>
 
 <div class="form-group {{ ($errors->has('date_of_contract')) ? 'has-error' : '' }}">
-    {!! Form::label('date_of_contract', trans('customers.customer-date_of_contract'), ['class' => 'col-sm-3 control-label']) !!}
+    {!! Form::label('date_of_contract', trans('companies.companies-date_of_contract'), ['class' => 'col-sm-3 control-label']) !!}
     <div class="col-sm-9">
         {!! Form::text('date_of_contract', null, ['class' => 'datepicker form-control']) !!}
         {{ ($errors->has('date_of_contract') ? $errors->first('date_of_contract') : '') }}
@@ -47,7 +47,7 @@
 </div>
 
 <div class="form-group {{ ($errors->has('discount')) ? 'has-error' : '' }}">
-    {!! Form::label('discount', trans('customers.customer-discount'), ['class' => 'col-sm-3 control-label']) !!}
+    {!! Form::label('discount', trans('companies.companies-discount'), ['class' => 'col-sm-3 control-label']) !!}
     <div class="col-sm-9">
         {!! Form::text('discount', null, ['class' => 'form-control']) !!}
         {{ ($errors->has('discount') ? $errors->first('discount') : '') }}
@@ -55,7 +55,7 @@
 </div>
 
 <div class="form-group {{ ($errors->has('description')) ? 'has-error' : '' }}">
-    {!! Form::label('description', trans('customers.user-description'), ['class' => 'col-sm-3 control-label']) !!}
+    {!! Form::label('description', trans('companies.user-description'), ['class' => 'col-sm-3 control-label']) !!}
     <div class="col-sm-9">
         {!! Form::textarea('description', null, ['class' => 'form-control', 'rows' => 3]) !!}
         {{ ($errors->has('description') ? $errors->first('description') : '') }}
@@ -63,11 +63,10 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('manager', trans('customers.field-manager'), ['class' => 'col-sm-3 control-label']) !!}
+    {!! Form::label('manager', trans('companies.field-manager'), ['class' => 'col-sm-3 control-label']) !!}
     <div class="col-sm-9">
         {!! Form::select('manager', $managers, null, [
-            'class' => 'form-control',
-            'required'
+            'class' => 'form-control'
         ]) !!}
     </div>
 </div>

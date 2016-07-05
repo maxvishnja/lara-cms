@@ -24,6 +24,7 @@ return [
     'confirm' => 'Подтвердить',
     'edit-image' => 'Изменить фото',
     'edit-logo' => 'Изменить логотоп',
+    'actions' => 'Действия',
 
     'nothing-selected' => 'Ничего не выбрано',
 
@@ -33,7 +34,7 @@ return [
 
     'group-create' => '<i class="fa fa-plus-circle" aria-hidden="true"></i> Добавить группу',
     'user-create' => '<i class="fa fa-plus-circle" aria-hidden="true"></i> Добавить пользователя',
-    'customers-create' => '<i class="fa fa-plus-circle" aria-hidden="true"></i> Добавить покупателя',
+    'companies-create' => '<i class="fa fa-plus-circle" aria-hidden="true"></i> Добавить компанию',
 
 
 ];

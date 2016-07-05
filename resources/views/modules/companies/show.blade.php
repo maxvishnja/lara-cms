@@ -3,7 +3,7 @@
 {{-- Web site Title --}}
 @section('title')
     @parent
-    @lang('customers.customer-profile')
+    @lang('companies.company-profile')
 @stop
 
 {{-- Content --}}
@@ -15,19 +15,19 @@
             <div class="profile_img">
                 <div id="crop-avatar">
                     <!-- Current avatar -->
-                    <img class="img-responsive img-circle avatar-view" src="/{{ $customer->avatar }}"
-                         alt="{{ $customer->name }}"
-                         title="{{ $customer->name }}">
+                    <img class="img-responsive img-circle avatar-view" src="/{{ $company->avatar }}"
+                         alt="{{ $company->name }}"
+                         title="{{ $company->name }}">
                 </div>
             </div>
-            <h3>{{ $customer->name }}</h3>
+            <h3>{{ $company->name }}</h3>
 
             <ul class="list-unstyled user_data">
-                <li><i class="fa fa-envelope"></i> {{ $customer->email }}</li>
-                {!! $customer->phone ? '<li><i class="fa fa-phone"></i> '.$customer->phone.' </li>' : '' !!}
+                <li><i class="fa fa-envelope"></i> {{ $company->email }}</li>
+                {!! $company->phone ? '<li><i class="fa fa-phone"></i> '.$company->phone.' </li>' : '' !!}
             </ul>
 
-            <a class="btn btn-success" href="{{ route('customers.edit', $customer->id) }}"><i
+            <a class="btn btn-success" href="{{ route('companies.edit', $company->id) }}"><i
                         class="fa fa-edit m-right-xs"></i> {{ trans('actions.edit') }}</a>
 
         </div>
@@ -47,57 +47,58 @@
 
                         <div class="well clearfix">
                             <div class="col-md-8">
-                                @if ($customer->name)
-                                    <p><strong>{{ trans('customers.field-name') }}:</strong> {{ $customer->name }} </p>
+                                @if ($company->name)
+                                    <p><strong>{{ trans('companies.field-name') }}:</strong> {{ $company->name }} </p>
                                 @endif
-                                <p><strong>{{ trans('customers.field-email') }}:</strong> {{ $customer->email }}</p>
-                                @if ($customer->phone)
-                                    <p><strong>{{ trans('customers.field-phone') }}:</strong> {{ $customer->phone }}
+                                <p><strong>{{ trans('companies.field-email') }}:</strong> {{ $company->email }}</p>
+                                @if ($company->phone)
+                                    <p><strong>{{ trans('companies.field-phone') }}:</strong> {{ $company->phone }}
                                     </p>
                                 @endif
-                                @if ($customer->skype)
-                                    <p><strong>{{ trans('customers.field-skype') }}:</strong> {{ $customer->skype }}
+                                @if ($company->skype)
+                                    <p><strong>{{ trans('companies.field-skype') }}:</strong> {{ $company->skype }}
                                     </p>
                                 @endif
-                                @if ($customer->discount)
-                                    <p><strong>{{ trans('customers.customer-discount') }}
-                                            :</strong> {{ $customer->discount }} %</p>
+                                @if ($company->discount)
+                                    <p><strong>{{ trans('companies.companies-discount') }}
+                                            :</strong> {{ $company->discount }} %</p>
                                 @endif
-                                @if ($customer->description)
+                                @if ($company->description)
                                     <p><strong>{{ trans('users.user-description') }}:</strong></p>
-                                    <p>{{ $customer->description }}</p>
+                                    <p>{{ $company->description }}</p>
                                 @endif
 
                             </div>
                             <div class="col-md-4">
-                                <p><em>{{ trans('customers.customer-date_of_contract') }}
-                                        : {{ $customer->date_of_contract }}</em></p>
-                                <p><em>{{ trans('customers.customer-last-updated') }}: {{ $customer->updated_at }}</em>
+                                <p><em>{{ trans('companies.company-date_of_contract') }}
+                                        : {{ $company->date_of_contract }}</em></p>
+                                <p><em>{{ trans('companies.company-last-updated') }}: {{ $company->updated_at }}</em>
                                 </p>
                             </div>
                         </div>
 
-                        <h4>{{ trans('customers.profile-manager') }}:</h4>
-                        <div class="well clearfix">
-                            <div class="col-md-3">
-                                <img src="/{{ $manager->avatar }}" alt="" class="img-circle profile_img">
-                            </div>
-                            <div class="col-md-9 text-left">
-                                <div class="message_wrapper">
-                                    <p><i class="fa fa-user"></i> {{ $manager->last_name.' '. $manager->first_name }}
-                                    @if ($manager->email)
-                                        <p><i class="fa fa-envelope"></i>  {{ $manager->email }}
-                                    @endif
-                                    @if ($manager->phone)
-                                        <p><i class="fa fa-phone"></i> {{ $manager->phone }}
-                                    @endif
-                                    @if ($manager->skype)
-                                        <p><i class="fa fa-skype"></i>  {{ $manager->skype }}
-                                    @endif
+                        @if($manager)
+                            <h4>{{ trans('companies.profile-manager') }}:</h4>
+                            <div class="well clearfix">
+                                <div class="col-md-3">
+                                    <img src="/{{ $manager->avatar }}" alt="" class="img-circle profile_img">
+                                </div>
+                                <div class="col-md-9 text-left">
+                                    <div class="message_wrapper">
+                                        <p><i class="fa fa-user"></i> {{ $manager->last_name.' '. $manager->first_name }}
+                                        @if ($manager->email)
+                                            <p><i class="fa fa-envelope"></i>  {{ $manager->email }}
+                                        @endif
+                                        @if ($manager->phone)
+                                            <p><i class="fa fa-phone"></i> {{ $manager->phone }}
+                                        @endif
+                                        @if ($manager->skype)
+                                            <p><i class="fa fa-skype"></i>  {{ $manager->skype }}
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
+                        @endif
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
 

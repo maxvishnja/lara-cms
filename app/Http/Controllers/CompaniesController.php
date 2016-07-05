@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Customers;
+use App\Company;
 use App\Http\Requests;
-use App\Http\Requests\CustomerRequest;
+use App\Http\Requests\CompaniesRequest;
 use Intervention\Image\Facades\Image;
-use Sentinel\Repositories\Group\SentinelGroupRepositoryInterface;
 use Sentinel\Repositories\User\SentinelUserRepositoryInterface;
 use App\Http\Controllers\UsersController;
 
-class CustomersController extends Controller
+class CompaniesController extends Controller
 {
 
     public function __construct(
@@ -22,16 +21,14 @@ class CustomersController extends Controller
         $this->users = $users;
     }
 
-
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        $customers = Customers::all();
-        return view('modules/customers.index', ['customers' => $customers]);
+        $companies = Company::all();
+        return view('modules/companies.index', ['companies' => $companies]);
     }
-
 
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -39,20 +36,18 @@ class CustomersController extends Controller
     public function create()
     {
         $managers = $this->users->getAllManagersForForm();
-        return view('modules/customers.create', ['managers' => $managers]);
+        return view('modules/companies.create', ['managers' => $managers]);
     }
-
 
     /**
-     * @param UserCreateRequest $request
+     * @param CompaniesRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(CustomerRequest $request)
+    public function store(CompaniesRequest $request)
     {
-        Customers::create($request->all());
-        return redirect()->route('customers.index');
+        Company::create($request->all());
+        return redirect()->route('companies.index');
     }
-
 
     /**
      * @param $id
@@ -60,11 +55,9 @@ class CustomersController extends Controller
      */
     public function show($id)
     {
-        $customer=Customers::findOrfail($id);
-
-        $manager=$this->userRepository->retrieveById($customer->manager);
-
-        return view('modules/customers.show',['customer'=>$customer, 'manager'=>$manager]);
+        $company = Company::findOrfail($id);
+        $manager = $this->userRepository->retrieveById($company->manager);
+        return view('modules/companies.show', ['company' => $company, 'manager' => $manager]);
     }
 
     /**
@@ -73,18 +66,17 @@ class CustomersController extends Controller
      */
     public function edit($id)
     {
-        $customer=Customers::findOrfail($id);
+        $company = Company::findOrfail($id);
         $managers = $this->users->getAllManagersForForm();
-        return view('modules/customers.edit',['customer'=>$customer, 'managers'=>$managers]);
+        return view('modules/companies.edit', ['company' => $company, 'managers' => $managers]);
     }
 
-
     /**
-     * @param CustomerRequest $request
+     * @param CompaniesRequest $request
      * @param $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(CustomerRequest $request, $id)
+    public function update(CompaniesRequest $request, $id)
     {
         // Gather Input
         $data = $request->all();
@@ -96,11 +88,9 @@ class CustomersController extends Controller
             $data['avatar'] = 'upload/avatars/' . $avatar;
         }
 
-        $customer = Customers::findorfail($id);
-
-        $customer->update($data);
-
-        return redirect()->route('customers.index');
+        $company = Company::findorfail($id);
+        $company->update($data);
+        return redirect()->route('companies.index');
     }
 
     /**
@@ -109,8 +99,8 @@ class CustomersController extends Controller
      */
     public function destroy($id)
     {
-        Customers::destroy($id);
-        return redirect()->route('customers.index');
+        Company::destroy($id);
+        return redirect()->route('companies.index');
     }
 
 

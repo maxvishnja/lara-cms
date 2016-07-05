@@ -3,19 +3,19 @@
 {{-- Web site Title --}}
 @section('title')
     @parent
-    @lang('customers.customer-edit_title')
+    @lang('companies.companies-edit_title')
 @stop
 
 {{-- Content --}}
 @section('content')
 
     <div class="row">
-        <h4>{{ trans('customers.customer-profile') }}</h4>
+        <h4>{{ trans('companies.company-profile') }}</h4>
         <div class="well">
-            {!! Form::model($customer, ['route' => ['customers.update',  $customer->id], 'method' => 'put', 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data']) !!}
+            {!! Form::model($company, ['route' => ['companies.update',  $company->id], 'method' => 'put', 'class' => 'form-horizontal', 'enctype' => 'multipart/form-data']) !!}
             <div class="row">
                 <div class="col-md-3 text-center">
-                    <img src="/{{ $customer->avatar }}" alt="{{ $customer->name}}" width="200"
+                    <img src="/{{ $company->avatar }}" alt="{{ $company->name}}" width="200"
                          class="img-circle mb20">
 
                     <div class="form-group {{ ($errors->has('name')) ? 'has-error' : '' }}" for="first_name">
@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="col-md-9">
-                    @include('modules/customers.fieldsForm')
+                    @include('modules/companies.fieldsForm')
                 </div>
             </div>
 

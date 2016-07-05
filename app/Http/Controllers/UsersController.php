@@ -27,7 +27,7 @@ class UsersController extends Controller
     public function getAllManagersForForm()
     {
         $users = $this->userRepository->all();
-        $managers = array('' => trans('customers.field-manager'));
+        $managers = array('' => trans('actions.nothing-selected'));
         foreach ($users as $key => $user) {
             if ($user->hasAccess('admin') or $user->hasAccess('manager')) {
                 $managers[$user->id] = $user->first_name . ' ' . $user->last_name;

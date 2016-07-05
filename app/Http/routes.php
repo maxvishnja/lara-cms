@@ -16,7 +16,7 @@ Route::group(['middleware' => ['sentry.auth']], function () {
         return View::make('modules/main.index');
     }));
 
-    // Customers
-    Route::resource('customers', 'CustomersController');
+    // Companies
+    Route::resource('companies', 'CompaniesController');
 });
 
