@@ -4,23 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Customers;
 use App\Http\Requests;
-use App\Http\Requests\CustomerUpdateRequest;
-use App\Http\Requests\CustomerCreateRequest;
+use App\Http\Requests\CustomerRequest;
 use Intervention\Image\Facades\Image;
 use Sentinel\Repositories\Group\SentinelGroupRepositoryInterface;
 use Sentinel\Repositories\User\SentinelUserRepositoryInterface;
+use App\Http\Controllers\UsersController;
 
 class CustomersController extends Controller
 {
 
     public function __construct(
         SentinelUserRepositoryInterface $userRepository,
-        SentinelGroupRepositoryInterface $groupRepository
+        UsersController $users
     )
     {
-        $this->userRepository  = $userRepository;
-        $this->groupRepository = $groupRepository;
-        $this->middleware('sentry.admin');
+        $this->userRepository = $userRepository;
+        $this->users = $users;
     }
 
 
@@ -30,8 +29,7 @@ class CustomersController extends Controller
     public function index()
     {
         $customers = Customers::all();
-        return view('modules/customers.index',['customers'=>$customers]);
-
+        return view('modules/customers.index', ['customers' => $customers]);
     }
 
 
@@ -40,14 +38,8 @@ class CustomersController extends Controller
      */
     public function create()
     {
-        $users = $this->userRepository->all();
-        foreach($users as $key=>$value)
-        {
-            if($value->hasAccess('admin') or $value->hasAccess('manager')){
-              $managers[$key]=$value;
-            }
-        }
-        return view('modules/customers.create',['managers'=>$managers]);
+        $managers = $this->users->getAllManagersForForm();
+        return view('modules/customers.create', ['managers' => $managers]);
     }
 
 
@@ -55,12 +47,10 @@ class CustomersController extends Controller
      * @param UserCreateRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(CustomerCreateRequest $request)
+    public function store(CustomerRequest $request)
     {
-
         Customers::create($request->all());
         return redirect()->route('customers.index');
-
     }
 
 
@@ -84,23 +74,17 @@ class CustomersController extends Controller
     public function edit($id)
     {
         $customer=Customers::findOrfail($id);
-        $users = $this->userRepository->all();
-        foreach($users as $key=>$value)
-        {
-            if($value->hasAccess('admin') or $value->hasAccess('manager')){
-                $managers[$key]=$value;
-            }
-        }
+        $managers = $this->users->getAllManagersForForm();
         return view('modules/customers.edit',['customer'=>$customer, 'managers'=>$managers]);
     }
 
 
     /**
-     * @param CustomerUpdateRequest $request
+     * @param CustomerRequest $request
      * @param $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(CustomerUpdateRequest $request, $id)
+    public function update(CustomerRequest $request, $id)
     {
         // Gather Input
         $data = $request->all();
@@ -125,9 +109,7 @@ class CustomersController extends Controller
      */
     public function destroy($id)
     {
-
         Customers::destroy($id);
-
         return redirect()->route('customers.index');
     }
 

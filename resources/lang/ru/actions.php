@@ -23,6 +23,9 @@ return [
     'restore' => 'Восстановить',
     'confirm' => 'Подтвердить',
     'edit-image' => 'Изменить фото',
+    'edit-logo' => 'Изменить логотоп',
+
+    'nothing-selected' => 'Ничего не выбрано',
 
     'confirm-title' => 'Уверены, что хотите выполнить это действие?',
     'confirm-but-yes' => 'Да',

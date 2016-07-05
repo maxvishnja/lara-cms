@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class CustomerUpdateRequest extends Request
+class CustomerRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,6 @@ class CustomerUpdateRequest extends Request
     public function rules()
     {
         return [
-            'email' => 'required|min:4|max:254|email',
-            'phone' => 'required',
             'name' => 'required|min:4'
         ];
     }

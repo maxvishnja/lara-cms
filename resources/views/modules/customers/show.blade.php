@@ -79,20 +79,20 @@
 
                         <h4>{{ trans('customers.profile-manager') }}:</h4>
                         <div class="well clearfix">
-                            <div class="col-md-1">
+                            <div class="col-md-3">
                                 <img src="/{{ $manager->avatar }}" alt="" class="img-circle profile_img">
                             </div>
-                            <div class="col-md-7 text-left">
+                            <div class="col-md-9 text-left">
                                 <div class="message_wrapper">
-                                    <p><i class="fa fa-user"></i>  {{ $manager->last_name.' '. $manager->first_name }}
+                                    <p><i class="fa fa-user"></i> {{ $manager->last_name.' '. $manager->first_name }}
                                     @if ($manager->email)
-                                    <p><i class="fa fa-envelope"></i>  {{ $manager->email }}
+                                        <p><i class="fa fa-envelope"></i>  {{ $manager->email }}
                                     @endif
                                     @if ($manager->phone)
-                                    <p> <i class="fa fa-phone"></i> {{ $manager->phone }}
+                                        <p><i class="fa fa-phone"></i> {{ $manager->phone }}
                                     @endif
                                     @if ($manager->skype)
-                                    <p><i class="fa fa-skype"></i>  {{ $manager->skype }}
+                                        <p><i class="fa fa-skype"></i>  {{ $manager->skype }}
                                     @endif
                                 </div>
                             </div>
