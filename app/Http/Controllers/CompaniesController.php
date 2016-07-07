@@ -5,9 +5,13 @@ namespace App\Http\Controllers;
 use App\Company;
 use App\Http\Requests;
 use App\Http\Requests\CompaniesRequest;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Intervention\Image\Facades\Image;
 use Sentinel\Repositories\User\SentinelUserRepositoryInterface;
 use App\Http\Controllers\UsersController;
+use Yajra\Datatables\Datatables;
 
 class CompaniesController extends Controller
 {
@@ -26,8 +30,57 @@ class CompaniesController extends Controller
      */
     public function index()
     {
-        $companies = Company::all();
-        return view('modules/companies.index', ['companies' => $companies]);
+        $managers = $this->users->getAllManagersForForm();
+        return view('modules/companies.index', ['managers' => $managers]);
+    }
+
+
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function getData(Request $request)
+    {
+        $companies = DB::table('companies')
+            ->leftJoin('users', 'companies.manager', '=', 'users.id')
+            ->select([
+                'companies.id',
+                'companies.name',
+                'companies.email',
+                'companies.phone',
+                'companies.type_id',
+                DB::raw('concat(users.first_name, " ", users.last_name) as full_name'),
+            ]);
+
+        return Datatables::of($companies)
+            ->filter(function ($query) use ($request) {
+                if ($request->has('type_id')) {
+                    $query->where('companies.type_id', '=', $request->get('type_id'));
+                }
+                if ($request->has('manager')) {
+                    $query->where('companies.manager', '=', $request->get('manager'));
+                }
+            })
+            ->editColumn('type_id', function($company) {
+                $typeArr = config('company.types_of_companies');
+                return $typeArr[$company->type_id];
+            })
+            ->addColumn('action', function ($company) {
+                return '
+                    <a class="btn btn-primary btn-xs" href=" ' . route("companies.show", array($company->id), false) . '" title="' . trans("actions.view") . '">
+                        <i class="fa fa-user"> </i> ' . trans("actions.view") . '</a>
+
+                     <a class="btn btn-success btn-xs" type="button" href="' . route("companies.edit", array($company->id), false) . '" title="' . trans("actions.edit") . '"><i class="fa fa-pencil"></i></a>
+
+                    <a class="btn btn-danger btn-xs company-destroy" href=""
+                        href="#"
+                        data-company-id="' . $company->id . '"
+                        title="' . trans("actions.delete") . '">
+                        <i class="fa fa-remove"> </i>
+                    </a>
+                ';
+            })
+            ->make();
     }
 
     /**
@@ -100,7 +153,7 @@ class CompaniesController extends Controller
     public function destroy($id)
     {
         Company::destroy($id);
-        return redirect()->route('companies.index');
+        return 'success';
     }
 
 

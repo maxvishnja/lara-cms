@@ -12,7 +12,8 @@
         "cartalyst/sentry": "2.1.*",
         "vinkla/hashids": "~2.0",
         "intervention/image": "^2.3",
-        "laravelcollective/html": "~5.0"
+        "laravelcollective/html": "~5.0",
+        "yajra/laravel-datatables-oracle": "^6.15"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

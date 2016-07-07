@@ -15,7 +15,7 @@ class CompaniesTable extends Migration
         Schema::create('companies', function ($table) {
             $table->increments('id');
             $table->string('email');
-            $table->string('name')->nullable()->unique();
+            $table->string('name')->nullable();
             $table->timestamps();
             $table->string('phone');
             $table->string('skype');

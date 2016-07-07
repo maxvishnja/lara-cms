@@ -53,3 +53,15 @@
 .login_form_forgot form input[type="submit"]{
      margin-left: 0;
 }
+
+.well-filter {
+
+}
+
+.well-filter label {
+    font-weight: normal;
+}
+
+.filter_reset {
+    margin: 10px;
+}

@@ -2,44 +2,30 @@
 
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Users Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used during authentication for various
-    | messages that we need to display to the user. You are free to modify
-    | these language lines according to your application's requirements.
-    |
-    */
-
-    'title' => 'Покупатели',
+    'title' => 'Компании',
+    'edit_title' => 'Изменить компанию',
     'empty' => 'У Вас пока нет ни одной компании!',
-
-    // Users
     'companies-create_title' => 'Добавить покупателя',
-    'companies-edit_title' => 'Редактировать профиль',
-    'companies-reset_pass_title' => 'Сбросить пароль',
-
     'field-logo' => ' Логотип',
     'field-email' => 'E-mail',
-    'user-field-pass' => 'Пароль',
-    'user-field-confirm-pass' => 'Подтвердите пароль',
-    'company-profile' => 'Профиль покупателя',
-    'field-name' => 'Имя/Название компании',
+    'company-profile' => 'Профиль компании',
+    'field-name' => 'Название компании',
     'field-phone' => 'Телефон',
     'field-skype' => 'Skype',
-    'field-manager' => 'Выберите менеджера',
+    'field-manager' => 'Ответственный',
     'profile-manager' => 'Ответственный менеджер',
-    'company-date_of_contract' => 'Дата заключения договора',
+    'companies-date_of_contract' => 'Дата заключения договора',
     'companies-discount' => 'Размер скидки',
     'user-description' => 'Дополнительная информация',
-    'user-change-pass' => 'Изменить пароль',
-    'user-field-pass-new' => 'Новый пароль',
-    'user-groups' => 'Группы',
-    'user-no-groups' => 'Не входит ни в одну группу',
-    'user-account-created' => 'Создания аккаунта',
-    'company-last-updated' => 'Последние изменения',
-    'user-forgot-password' => 'Восстановить пароль',
+    'type_company' => 'Тип компании',
+
+    'table-head' => array(
+        'name' => 'Название',
+        'email' => 'Email',
+        'phone' => 'Телефон',
+        'type' => 'Тип компании',
+        'manager' => 'Ответственный',
+        'actions' => 'Действия',
+    )
 
 ];

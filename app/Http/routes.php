@@ -18,5 +18,6 @@ Route::group(['middleware' => ['sentry.auth']], function () {
 
     // Companies
     Route::resource('companies', 'CompaniesController');
+    Route::get('companies-data', ['before' => 'csrf', 'as' => 'companies.data', 'uses' => 'CompaniesController@getData']);
 });
 

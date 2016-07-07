@@ -36,6 +36,13 @@ function restfulize() {
 
 $(document).ready(function () {
 
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+
     // Template scripts
 
     function initToolbarBootstrapBindings() {
@@ -160,8 +167,12 @@ $(document).ready(function () {
 
 
 
+
 });
 $(document).ready(function() {
+
+});
+$(function() {
 
 });
 //# sourceMappingURL=app.js.map

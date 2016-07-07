@@ -161,6 +161,7 @@ return [
         Sentinel\SentinelServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         'Collective\Html\HtmlServiceProvider',
+        Yajra\Datatables\DatatablesServiceProvider::class,
 
     ],
 
@@ -211,6 +212,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'Form' => 'Collective\Html\FormFacade',
         'Html' => 'Collective\Html\HtmlFacade',
+        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
 
     ],
 

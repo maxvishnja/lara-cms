@@ -3,7 +3,7 @@
 {{-- Web site Title --}}
 @section('title')
     @parent
-    @lang('companies.companies-edit_title')
+    @lang('companies.edit_title')
 @stop
 
 {{-- Content --}}
