@@ -25,6 +25,7 @@ return [
     'edit-image' => 'Изменить фото',
     'edit-logo' => 'Изменить логотоп',
     'actions' => 'Действия',
+    'reset' => 'Сбросить',
 
     'nothing-selected' => 'Ничего не выбрано',
 

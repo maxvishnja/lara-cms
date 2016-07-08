@@ -4,7 +4,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Authentication Language Lines
+    | Language Lines
     |--------------------------------------------------------------------------
     |
     | The following language lines are used during authentication for various
@@ -13,6 +13,7 @@ return [
     |
     */
 
+    'filter' => 'Фильтр',
     'copyright' => '©2016 ArchCrm',
 
 

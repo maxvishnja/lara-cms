@@ -20,9 +20,9 @@
     <div class="well well-sm well-filter">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="pull-left">Фильтр</h2>
+                <h2 class="pull-left">{{ trans('common.filter') }}</h2>
                 <div class="pull-left">
-                    <button class="btn btn-warning btn-xs filter_reset" type="reset">Сбросить</button>
+                    <button class="btn btn-warning btn-xs filter_reset" type="reset">{{ trans('actions.reset') }}</button>
                 </div>
             </div>
         </div>
@@ -59,12 +59,12 @@
         <thead>
         <tr>
             <th>Id</th>
-            <th>Название</th>
-            <th>Email</th>
-            <th>Телефон</th>
-            <th>Тип компании</th>
-            <th>Ответственный</th>
-            <th>Действия</th>
+            <th>{{ trans('companies.table-head.name') }}</th>
+            <th>{{ trans('companies.table-head.email') }}</th>
+            <th>{{ trans('companies.table-head.phone') }}</th>
+            <th>{{ trans('companies.table-head.type') }}</th>
+            <th>{{ trans('companies.table-head.manager') }}</th>
+            <th>{{ trans('companies.table-head.actions') }}</th>
         </tr>
         </thead>
     </table>
@@ -89,6 +89,32 @@
                     d.manager = $('#manager').val() == 0 ? '' : $('#manager').val();
                 }
             },
+            dom: "Bfrtip",
+            buttons: [
+                {
+                    extend: "csv",
+                    className: "btn-sm btn-info",
+                    exportOptions: {
+                        columns: [ 0, 1, 2, 3, 4, 5 ]
+                    }
+                },
+                {
+                    extend: "excel",
+                    className: "btn-sm btn-info",
+                    exportOptions: {
+                        columns: [ 0, 1, 2, 3, 4, 5 ]
+                    }
+                },
+                {
+                    extend: "print",
+                    className: "btn-sm btn-info",
+                    exportOptions: {
+                        columns: [ 0, 1, 2, 3, 4, 5 ]
+                    }
+                }
+            ],
+            responsive: true,
+
             columns: [
                 {"width": "2%"},
                 {"width": "20%"},
@@ -127,6 +153,17 @@
                 });
             }
         });
+
+
+        TableManageButtons = function() {
+            "use strict";
+            return {
+                init: function() {
+                    handleDataTableButtons();
+                }
+            };
+        }();
+
 
         $('#type_id, #manager').on('change', function (e) {
             table.draw();
