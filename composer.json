@@ -13,7 +13,8 @@
         "vinkla/hashids": "~2.0",
         "intervention/image": "^2.3",
         "laravelcollective/html": "~5.0",
-        "yajra/laravel-datatables-oracle": "^6.15"
+        "yajra/laravel-datatables-oracle": "^6.15",
+        "venturecraft/revisionable": "1.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

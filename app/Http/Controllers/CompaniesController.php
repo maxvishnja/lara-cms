@@ -110,7 +110,8 @@ class CompaniesController extends Controller
     {
         $company = Company::findOrfail($id);
         $manager = $this->userRepository->retrieveById($company->manager);
-        return view('modules/companies.show', ['company' => $company, 'manager' => $manager]);
+        $history = $company->revisionHistory;
+        return view('modules/companies.show', ['company' => $company, 'manager' => $manager, 'history' => $history]);
     }
 
     /**
