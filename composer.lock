@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2645e1fdd77ddcec1a03b592e320c8a7",
-    "content-hash": "1598eae984fcfce4267c0d4b1d971539",
+    "hash": "260f42f40a56ae9d9b116d497123c72a",
+    "content-hash": "66ce3ac3dd708389b16c3cf3f9c7185f",
     "packages": [
         {
             "name": "cartalyst/sentry",
@@ -868,16 +868,16 @@
         },
         {
             "name": "laravelrus/localized-carbon",
-            "version": "v1.4.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LaravelRUS/localized-carbon.git",
-                "reference": "0a08dbf7687f5cb4cd35180c326502b2f4e5b516"
+                "reference": "fc0905b060713c4c1ecba60edf5a479931bb2def"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelRUS/localized-carbon/zipball/0a08dbf7687f5cb4cd35180c326502b2f4e5b516",
-                "reference": "0a08dbf7687f5cb4cd35180c326502b2f4e5b516",
+                "url": "https://api.github.com/repos/LaravelRUS/localized-carbon/zipball/fc0905b060713c4c1ecba60edf5a479931bb2def",
+                "reference": "fc0905b060713c4c1ecba60edf5a479931bb2def",
                 "shasum": ""
             },
             "require": {
@@ -908,7 +908,7 @@
                 "laravel",
                 "time"
             ],
-            "time": "2015-01-30 02:49:29"
+            "time": "2015-10-27 23:45:13"
         },
         {
             "name": "league/flysystem",
@@ -4118,7 +4118,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "illuminate/support": 20,
-        "illuminate/contracts": 20
+        "illuminate/contracts": 20,
+        "laravelrus/localized-carbon": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
