@@ -65,3 +65,23 @@
 .filter_reset {
     margin: 10px;
 }
+
+
+
+@media only screen and (max-width : 1200px) {
+
+    .table {
+        font-size: 12px;
+    }
+
+    .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+        padding: 4px;
+    }
+
+    .table .btn {
+        margin-bottom: 5px;
+    }
+
+}
+
+

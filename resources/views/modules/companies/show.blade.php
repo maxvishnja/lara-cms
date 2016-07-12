@@ -106,8 +106,8 @@
                             <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Текст</th>
-                                <th>Дата</th>
+                                <th>{{ trans('datatables.history-table.info') }}</th>
+                                <th>{{ trans('datatables.history-table.time') }}</th>
                             </tr>
                             </thead>
                         </table>
@@ -127,14 +127,22 @@
 <script src="{{ asset('js/datatables.js') }}"></script>
 <script>
     $(function () {
+        $('a[data-toggle="tab"]').on( 'shown.bs.tab', function (e) {
+            $($.fn.dataTable.tables(true)).DataTable()
+                    .columns.adjust()
+                    .responsive.recalc();
+        } );
         var table = $('#history-table').DataTable({
-            processing: true,
-            serverSide: true,
+
+            scrollY: "400px",
+            searching: false,
+            info: false,
+            responsive: true,
             ajax: '{{ route('company.history', $company->id) }}',
             columns: [
                 {data: 'id', name: 'id'},
                 {data: 'text', name: 'text'},
-                {data: 'date', name: 'date'},
+                {data: 'date', name: 'date'}
             ],
             language: {
                 processing: "{{ trans('datatables.companies.processing') }}",
@@ -152,10 +160,6 @@
                     previous: "{{ trans('datatables.companies.previous') }}",
                     next: "{{ trans('datatables.companies.next') }}",
                     last: "{{ trans('datatables.companies.last') }}"
-                },
-                aria: {
-                    sortAscending: "{{ trans('datatables.companies.sortAscending') }}",
-                    sortDescending: "{{ trans('datatables.companies.sortDescending') }}"
                 }
             }
         });

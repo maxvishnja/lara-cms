@@ -4,8 +4,13 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+
     "hash": "b70f245bc3a8051dba88f795715f101f",
     "content-hash": "f197339208a8879a72470fbca128f4d1",
+
+    "hash": "260f42f40a56ae9d9b116d497123c72a",
+    "content-hash": "66ce3ac3dd708389b16c3cf3f9c7185f",
+
     "packages": [
         {
             "name": "cartalyst/sentry",
@@ -4280,8 +4285,12 @@
     "stability-flags": {
         "illuminate/support": 20,
         "illuminate/contracts": 20,
+
         "laravelrus/localized-carbon": 20,
         "jeroen-g/laravel-packager": 20
+
+        "laravelrus/localized-carbon": 20
+
     },
     "prefer-stable": false,
     "prefer-lowest": false,

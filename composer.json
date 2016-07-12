@@ -17,6 +17,8 @@
         "venturecraft/revisionable": "1.*",
         "laravelrus/localized-carbon": "dev-master",
         "jeroen-g/laravel-packager" : "dev-master"
+        "laravelrus/localized-carbon": "dev-master"
+
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

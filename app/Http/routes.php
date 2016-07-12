@@ -20,5 +20,8 @@ Route::group(['middleware' => ['sentry.auth']], function () {
     Route::resource('companies', 'CompaniesController');
     Route::get('companies-data', ['before' => 'csrf', 'as' => 'companies.data', 'uses' => 'CompaniesController@getData']);
     Route::get('company-history/{id}', ['before' => 'csrf', 'as' => 'company.history', 'uses' => 'CompaniesController@getCompanyHistory']);
+
+    // Users - get history fot datatables
+    Route::get('user-history/{id}', ['before' => 'csrf', 'as' => 'user.history', 'uses' => 'UsersController@getUserHistory']);
 });
 

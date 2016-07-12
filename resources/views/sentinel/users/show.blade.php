@@ -108,27 +108,15 @@
                     <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
 
 
-                        @if(isset($revisions))
-                            <ul class="list-group">
-                                @foreach($revisions as $item)
-                                    @if($item->key == 'created_at' && !$item->old_value)
-                                        <li class="list-group-item">
-                                            <b>{{ $item->userResponsible()->first_name }} {{ $item->userResponsible()->last_name }}</b>
-                                            создал ресурс {{ $item->newValue() }}</li>
-                                    @else
-                                        <li class="list-group-item">
-                                            @lang('revision.edit', [
-                                                'First_name' => $item->userResponsible()->first_name,
-                                                'Last_name' => $item->userResponsible()->last_name,
-                                                'fieldName' => array_get(trans('revision.companies'), $item->fieldName()),
-                                                'oldValue' => $item->oldValue(),
-                                                'newValue' => $item->newValue()
-                                                ])
-                                        </li>
-                                    @endif
-                                @endforeach
-                            </ul>
-                        @endif
+                        <table class="table jambo_table" id="history-table">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>{{ trans('datatables.history-table.info') }}</th>
+                                <th>{{ trans('datatables.history-table.time') }}</th>
+                            </tr>
+                            </thead>
+                        </table>
 
                     </div>
                 </div>
@@ -136,7 +124,52 @@
         </div>
     </div>
 
-
-
-
 @stop
+
+@push('styles')
+<link href="{{ asset('css/datatables.css') }}" rel="stylesheet">
+@endpush
+
+@push('scripts')
+<script src="{{ asset('js/datatables.js') }}"></script>
+<script>
+    $(function () {
+        $('a[data-toggle="tab"]').on( 'shown.bs.tab', function (e) {
+            $($.fn.dataTable.tables(true)).DataTable()
+                    .columns.adjust()
+                    .responsive.recalc();
+        } );
+        var table = $('#history-table').DataTable({
+            scrollY: "400px",
+            searching: false,
+            info: false,
+            responsive: true,
+            ajax: '{{ route('user.history', $user->id) }}',
+            columns: [
+                {data: 'id', name: 'id'},
+                {data: 'text', name: 'text'},
+                {data: 'date', name: 'date'}
+            ],
+            language: {
+                processing: "{{ trans('datatables.companies.processing') }}",
+                search: "{{ trans('datatables.companies.search') }}",
+                lengthMenu: "{{ trans('datatables.companies.lengthMenu') }}",
+                info: "{{ trans('datatables.companies.info') }}",
+                infoEmpty: "{{ trans('datatables.companies.infoEmpty') }}",
+                infoFiltered: "{{ trans('datatables.companies.infoFiltered') }}",
+                infoPostFix: "{{ trans('datatables.companies.infoPostFix') }}",
+                loadingRecords: "{{ trans('datatables.companies.loadingRecords') }}",
+                zeroRecords: "{{ trans('datatables.companies.zeroRecords') }}",
+                emptyTable: "{{ trans('datatables.companies.emptyTable') }}",
+                paginate: {
+                    first: "{{ trans('datatables.companies.first') }}",
+                    previous: "{{ trans('datatables.companies.previous') }}",
+                    next: "{{ trans('datatables.companies.next') }}",
+                    last: "{{ trans('datatables.companies.last') }}"
+                }
+            }
+        });
+
+    });
+</script>
+@endpush

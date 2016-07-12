@@ -135,9 +135,7 @@ class UserController extends BaseController
         // Get the user
         $user = $this->userRepository->retrieveById($id);
 
-        $revisions = \Venturecraft\Revisionable\Revision::where('user_id', $id)->get();
-
-        return $this->viewFinder('Sentinel::users.show', ['user' => $user, 'revisions' => $revisions]);
+        return $this->viewFinder('Sentinel::users.show', ['user' => $user]);
     }
 
     /**

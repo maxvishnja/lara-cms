@@ -49,6 +49,4 @@ return [
     'group-field-name' => 'Название',
     'group-field-permissions' => 'Разрешения',
     'group-field-actions' => 'Действия',
-
-
 ];
