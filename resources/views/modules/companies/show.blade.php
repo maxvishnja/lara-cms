@@ -127,14 +127,21 @@
 <script src="{{ asset('js/datatables.js') }}"></script>
 <script>
     $(function () {
+        $('a[data-toggle="tab"]').on( 'shown.bs.tab', function (e) {
+            $($.fn.dataTable.tables(true)).DataTable()
+                    .columns.adjust()
+                    .responsive.recalc();
+        } );
         var table = $('#history-table').DataTable({
-            processing: true,
-            serverSide: true,
+            ordering: false,
+            scrollY: "400px",
+            searching: false,
+            info: false,
             ajax: '{{ route('company.history', $company->id) }}',
             columns: [
                 {data: 'id', name: 'id'},
                 {data: 'text', name: 'text'},
-                {data: 'date', name: 'date'},
+                {data: 'date', name: 'date'}
             ],
             language: {
                 processing: "{{ trans('datatables.companies.processing') }}",

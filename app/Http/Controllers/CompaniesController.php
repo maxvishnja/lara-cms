@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Intervention\Image\Facades\Image;
+use Laravelrus\LocalizedCarbon\LocalizedCarbon;
 use Sentinel\Repositories\User\SentinelUserRepositoryInterface;
 use App\Http\Controllers\UsersController;
 use Yajra\Datatables\Datatables;
@@ -134,10 +135,11 @@ class CompaniesController extends Controller
                     'oldValue' => $item->oldValue(),
                     'newValue' => $item->newValue()
                 ]);
-                $obj->date = $date->toDayDateTimeString();
+                $obj->date = LocalizedCarbon::instance($item->created_at)->diffForHumans();
                 $dataHistory[] = $obj;
             }
         }
+        $dataHistory = array_reverse($dataHistory);
         $historyCollection = new Collection($dataHistory);
         return Datatables::of($historyCollection)->make(true);
     }

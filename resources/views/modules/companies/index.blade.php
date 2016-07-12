@@ -118,11 +118,11 @@
             columns: [
                 {"width": "6%"},
                 {"width": "19%"},
-                {"width": "15%"},
-                {"width": "15%"},
-                {"width": "15%"},
+                {"width": "14%"},
+                {"width": "14%"},
+                {"width": "14%"},
                 {"width": "10%"},
-                {"width": "12%"}
+                {"width": "13%"}
             ],
             language: {
                 processing: "{{ trans('datatables.companies.processing') }}",
