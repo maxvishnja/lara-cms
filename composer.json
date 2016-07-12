@@ -15,7 +15,8 @@
         "laravelcollective/html": "~5.0",
         "yajra/laravel-datatables-oracle": "^6.15",
         "venturecraft/revisionable": "1.*",
-        "laravelrus/localized-carbon": "1.*"
+        "laravelrus/localized-carbon": "dev-master",
+        "jeroen-g/laravel-packager" : "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -30,6 +31,7 @@
             "packages/rydurham/sentinel/src/controllers"
         ],
         "psr-4": {
+            "maxvishnja\\Tickets\\": "packages/maxvishnja/Tickets/src",
             "App\\": "app/",
             "Sentinel\\": "packages/rydurham/sentinel/src"
         }
