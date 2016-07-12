@@ -162,6 +162,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         'Collective\Html\HtmlServiceProvider',
         Yajra\Datatables\DatatablesServiceProvider::class,
+        'Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider',
 
     ],
 
@@ -213,6 +214,8 @@ return [
         'Form' => 'Collective\Html\FormFacade',
         'Html' => 'Collective\Html\HtmlFacade',
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
+        'LocalizedCarbon'   => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
+        'DiffFormatter'     => 'Laravelrus\LocalizedCarbon\DiffFactoryFacade',
 
     ],
 

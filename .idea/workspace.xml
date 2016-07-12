@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b6e727f-a5c6-4d8a-a23b-ab4cc1f279da" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/lang/ru/revision.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Company.php" afterPath="$PROJECT_DIR$/app/Company.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CompaniesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompaniesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages/rydurham/sentinel/src/controllers/UserController.php" afterPath="$PROJECT_DIR$/packages/rydurham/sentinel/src/controllers/UserController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/lang/ru/companies.php" afterPath="$PROJECT_DIR$/resources/lang/ru/companies.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/modules/companies/fieldsForm.blade.php" afterPath="$PROJECT_DIR$/resources/views/modules/companies/fieldsForm.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/modules/companies/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/modules/companies/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/modules/companies/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/modules/companies/show.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/sentinel/users/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/sentinel/users/show.blade.php" />
     </list>
     <ignored path="crm.local.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,12 +43,12 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="35" column="14" selection-start-line="33" selection-start-column="8" selection-end-line="35" selection-end-column="14" />
               <folding>
-                <marker date="1468220956000" expanded="true" signature="171:291" placeholder="..." />
-                <marker date="1468220956000" expanded="true" signature="185:289" placeholder="..." />
-                <marker date="1468220956000" expanded="true" signature="241:288" placeholder="..." />
-                <marker date="1468220956000" expanded="true" signature="3485:3578" placeholder="..." />
-                <marker date="1468220956000" expanded="true" signature="3499:3576" placeholder="..." />
-                <marker date="1468220956000" expanded="true" signature="3528:3575" placeholder="..." />
+                <marker date="1468309910000" expanded="true" signature="171:291" placeholder="..." />
+                <marker date="1468309910000" expanded="true" signature="185:289" placeholder="..." />
+                <marker date="1468309910000" expanded="true" signature="241:288" placeholder="..." />
+                <marker date="1468309910000" expanded="true" signature="3483:3576" placeholder="..." />
+                <marker date="1468309910000" expanded="true" signature="3497:3574" placeholder="..." />
+                <marker date="1468309910000" expanded="true" signature="3526:3573" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -56,7 +68,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -68,12 +80,12 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="85" column="42" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="42" />
               <folding>
-                <marker date="1468220956000" expanded="true" signature="1196:1353" placeholder="..." />
-                <marker date="1468220956000" expanded="true" signature="1210:1351" placeholder="..." />
-                <marker date="1468220956000" expanded="true" signature="1236:1350" placeholder="..." />
-                <marker date="1468220956000" expanded="true" signature="1609:1769" placeholder="..." />
-                <marker date="1468220956000" expanded="true" signature="1623:1767" placeholder="..." />
-                <marker date="1468220956000" expanded="true" signature="1652:1766" placeholder="..." />
+                <marker date="1468309910000" expanded="true" signature="1196:1353" placeholder="..." />
+                <marker date="1468309910000" expanded="true" signature="1210:1351" placeholder="..." />
+                <marker date="1468309910000" expanded="true" signature="1236:1350" placeholder="..." />
+                <marker date="1468309910000" expanded="true" signature="1609:1769" placeholder="..." />
+                <marker date="1468309910000" expanded="true" signature="1623:1767" placeholder="..." />
+                <marker date="1468309910000" expanded="true" signature="1652:1766" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -92,8 +104,8 @@
       <file leaf-file-name="CompaniesController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CompaniesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.625">
-              <caret line="32" column="58" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
+            <state vertical-scroll-proportion="-2.5">
+              <caret line="35" column="58" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
               <folding>
                 <element signature="e#40#56#0#PHP" expanded="true" />
               </folding>
@@ -114,8 +126,8 @@
       <file leaf-file-name="composer.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.63329315">
-              <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.3075995">
+              <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -135,7 +147,7 @@
         <entry file="file://$PROJECT_DIR$/app/Company.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="19" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="19" />
+              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -334,10 +346,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="977" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -677,12 +689,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="14" selection-start-line="33" selection-start-column="8" selection-end-line="35" selection-end-column="14" />
           <folding>
-            <marker date="1468220956000" expanded="true" signature="171:291" placeholder="..." />
-            <marker date="1468220956000" expanded="true" signature="185:289" placeholder="..." />
-            <marker date="1468220956000" expanded="true" signature="241:288" placeholder="..." />
-            <marker date="1468220956000" expanded="true" signature="3485:3578" placeholder="..." />
-            <marker date="1468220956000" expanded="true" signature="3499:3576" placeholder="..." />
-            <marker date="1468220956000" expanded="true" signature="3528:3575" placeholder="..." />
+            <marker date="1468309910000" expanded="true" signature="171:291" placeholder="..." />
+            <marker date="1468309910000" expanded="true" signature="185:289" placeholder="..." />
+            <marker date="1468309910000" expanded="true" signature="241:288" placeholder="..." />
+            <marker date="1468309910000" expanded="true" signature="3483:3576" placeholder="..." />
+            <marker date="1468309910000" expanded="true" signature="3497:3574" placeholder="..." />
+            <marker date="1468309910000" expanded="true" signature="3526:3573" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -706,7 +718,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -716,20 +728,20 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="85" column="42" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="42" />
           <folding>
-            <marker date="1468220956000" expanded="true" signature="1196:1353" placeholder="..." />
-            <marker date="1468220956000" expanded="true" signature="1210:1351" placeholder="..." />
-            <marker date="1468220956000" expanded="true" signature="1236:1350" placeholder="..." />
-            <marker date="1468220956000" expanded="true" signature="1609:1769" placeholder="..." />
-            <marker date="1468220956000" expanded="true" signature="1623:1767" placeholder="..." />
-            <marker date="1468220956000" expanded="true" signature="1652:1766" placeholder="..." />
+            <marker date="1468309910000" expanded="true" signature="1196:1353" placeholder="..." />
+            <marker date="1468309910000" expanded="true" signature="1210:1351" placeholder="..." />
+            <marker date="1468309910000" expanded="true" signature="1236:1350" placeholder="..." />
+            <marker date="1468309910000" expanded="true" signature="1609:1769" placeholder="..." />
+            <marker date="1468309910000" expanded="true" signature="1623:1767" placeholder="..." />
+            <marker date="1468309910000" expanded="true" signature="1652:1766" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CompaniesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.625">
-          <caret line="32" column="58" selection-start-line="32" selection-start-column="58" selection-end-line="32" selection-end-column="58" />
+        <state vertical-scroll-proportion="-2.5">
+          <caret line="35" column="58" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
           <folding>
             <element signature="e#40#56#0#PHP" expanded="true" />
           </folding>
@@ -747,7 +759,7 @@
     <entry file="file://$PROJECT_DIR$/app/Company.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="19" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="19" />
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -762,8 +774,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63329315">
-          <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.3075995">
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
           <folding />
         </state>
       </provider>

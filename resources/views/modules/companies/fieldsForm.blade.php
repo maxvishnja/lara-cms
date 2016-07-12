@@ -48,7 +48,7 @@
 </div>
 
 <div class="form-group {{ ($errors->has('date_of_contract')) ? 'has-error' : '' }}">
-    {!! Form::label('date_of_contract', trans('companies.companies-date_of_contract'), ['class' => 'col-sm-2 control-label']) !!}
+    {!! Form::label('date_of_contract', trans('companies.company-date_of_contract'), ['class' => 'col-sm-2 control-label']) !!}
     <div class="col-sm-10">
         {!! Form::text('date_of_contract', null, ['class' => 'datepicker form-control']) !!}
         {{ ($errors->has('date_of_contract') ? $errors->first('date_of_contract') : '') }}

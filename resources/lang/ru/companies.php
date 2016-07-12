@@ -14,7 +14,8 @@ return [
     'field-skype' => 'Skype',
     'field-manager' => 'Ответственный',
     'profile-manager' => 'Ответственный менеджер',
-    'companies-date_of_contract' => 'Дата заключения договора',
+    'company-date_of_contract' => 'Дата заключения договора',
+    'company-last-updated' => 'Последнее обновление',
     'companies-discount' => 'Размер скидки',
     'user-description' => 'Дополнительная информация',
     'type_company' => 'Тип компании',
@@ -26,6 +27,6 @@ return [
         'type' => 'Тип компании',
         'manager' => 'Ответственный',
         'actions' => 'Действия',
-    )
+    ),
 
 ];

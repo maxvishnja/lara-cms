@@ -116,13 +116,13 @@
             responsive: true,
 
             columns: [
-                {"width": "2%"},
-                {"width": "20%"},
-                {"width": "14%"},
-                {"width": "14%"},
-                {"width": "13%"},
+                {"width": "6%"},
+                {"width": "19%"},
+                {"width": "15%"},
+                {"width": "15%"},
+                {"width": "15%"},
                 {"width": "10%"},
-                {"width": "14%"}
+                {"width": "12%"}
             ],
             language: {
                 processing: "{{ trans('datatables.companies.processing') }}",
