@@ -101,21 +101,65 @@
                         @endif
                     </div>
                     <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
-                        <ul class="list-group">
-                            @foreach($history as $item)
-                                <li class="list-group-item">
-                                    <b>{{ $item->userResponsible()->first_name }} {{ $item->userResponsible()->last_name }}</b>
-                                    изменил {{ $item->fieldName() }} c {{ $item->oldValue() }} на {{ $item->newValue() }}</li>
-                            @endforeach
-                        </ul>
+
+                        <table class="table jambo_table" id="history-table">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Текст</th>
+                                <th>Дата</th>
+                            </tr>
+                            </thead>
+                        </table>
 
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
 @stop
+
+@push('styles')
+<link href="{{ asset('css/datatables.css') }}" rel="stylesheet">
+@endpush
+
+@push('scripts')
+<script src="{{ asset('js/datatables.js') }}"></script>
+<script>
+    $(function () {
+        var table = $('#history-table').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: '{{ route('company.history', $company->id) }}',
+            columns: [
+                {data: 'id', name: 'id'},
+                {data: 'text', name: 'text'},
+                {data: 'date', name: 'date'},
+            ],
+            language: {
+                processing: "{{ trans('datatables.companies.processing') }}",
+                search: "{{ trans('datatables.companies.search') }}",
+                lengthMenu: "{{ trans('datatables.companies.lengthMenu') }}",
+                info: "{{ trans('datatables.companies.info') }}",
+                infoEmpty: "{{ trans('datatables.companies.infoEmpty') }}",
+                infoFiltered: "{{ trans('datatables.companies.infoFiltered') }}",
+                infoPostFix: "{{ trans('datatables.companies.infoPostFix') }}",
+                loadingRecords: "{{ trans('datatables.companies.loadingRecords') }}",
+                zeroRecords: "{{ trans('datatables.companies.zeroRecords') }}",
+                emptyTable: "{{ trans('datatables.companies.emptyTable') }}",
+                paginate: {
+                    first: "{{ trans('datatables.companies.first') }}",
+                    previous: "{{ trans('datatables.companies.previous') }}",
+                    next: "{{ trans('datatables.companies.next') }}",
+                    last: "{{ trans('datatables.companies.last') }}"
+                },
+                aria: {
+                    sortAscending: "{{ trans('datatables.companies.sortAscending') }}",
+                    sortDescending: "{{ trans('datatables.companies.sortDescending') }}"
+                }
+            }
+        });
+
+    });
+</script>
+@endpush

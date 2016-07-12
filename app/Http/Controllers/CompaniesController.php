@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Company;
 use App\Http\Requests;
 use App\Http\Requests\CompaniesRequest;
+use Cartalyst\Sentry\Facades\Native\Sentry;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -12,6 +14,7 @@ use Intervention\Image\Facades\Image;
 use Sentinel\Repositories\User\SentinelUserRepositoryInterface;
 use App\Http\Controllers\UsersController;
 use Yajra\Datatables\Datatables;
+use Carbon\Carbon;
 
 class CompaniesController extends Controller
 {
@@ -61,7 +64,7 @@ class CompaniesController extends Controller
                     $query->where('companies.manager', '=', $request->get('manager'));
                 }
             })
-            ->editColumn('type_id', function($company) {
+            ->editColumn('type_id', function ($company) {
                 $typeArr = config('company.types_of_companies');
                 return $typeArr[$company->type_id];
             })
@@ -110,8 +113,33 @@ class CompaniesController extends Controller
     {
         $company = Company::findOrfail($id);
         $manager = $this->userRepository->retrieveById($company->manager);
-        $history = $company->revisionHistory;
-        return view('modules/companies.show', ['company' => $company, 'manager' => $manager, 'history' => $history]);
+        return view('modules/companies.show', ['company' => $company, 'manager' => $manager]);
+    }
+
+    public function getCompanyHistory($companyId)
+    {
+        $company = Company::findOrfail($companyId);
+        $getHistory = $company->revisionHistory;
+        $dataHistory = [];
+        if ($getHistory) {
+            foreach ($getHistory as $item) {
+                $user = $this->userRepository->retrieveById($item->user_id);
+                $date = Carbon::parse($item->created_at);
+                $obj = new \stdClass;
+                $obj->id = $item->id;
+                $obj->text = trans('revision.edit', [
+                    'First_name' => $user->first_name,
+                    'Last_name' => $user->last_name,
+                    'fieldName' => array_get(trans('revision.companies'), $item->key),
+                    'oldValue' => $item->oldValue(),
+                    'newValue' => $item->newValue()
+                ]);
+                $obj->date = $date->toDayDateTimeString();
+                $dataHistory[] = $obj;
+            }
+        }
+        $historyCollection = new Collection($dataHistory);
+        return Datatables::of($historyCollection)->make(true);
     }
 
     /**

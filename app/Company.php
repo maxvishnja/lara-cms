@@ -18,13 +18,7 @@ class Company extends Model
         'avatar',
         'description',
         'discount',
-    );
-    protected $revisionFormattedFieldNames = array(
-        'name' => 'Название',
-        'email' => 'Email',
-        'phone' => 'Телефон',
-        'skype' => 'Скайп',
-        'created_at' => 'Дата создания',
+        'manager',
     );
 
     protected $fillable = [
