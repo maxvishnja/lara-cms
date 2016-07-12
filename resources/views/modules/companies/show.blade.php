@@ -106,8 +106,8 @@
                             <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Текст</th>
-                                <th>Дата</th>
+                                <th>{{ trans('datatables.history-table.info') }}</th>
+                                <th>{{ trans('datatables.history-table.time') }}</th>
                             </tr>
                             </thead>
                         </table>
@@ -133,10 +133,11 @@
                     .responsive.recalc();
         } );
         var table = $('#history-table').DataTable({
-            ordering: false,
+
             scrollY: "400px",
             searching: false,
             info: false,
+            responsive: true,
             ajax: '{{ route('company.history', $company->id) }}',
             columns: [
                 {data: 'id', name: 'id'},
@@ -159,10 +160,6 @@
                     previous: "{{ trans('datatables.companies.previous') }}",
                     next: "{{ trans('datatables.companies.next') }}",
                     last: "{{ trans('datatables.companies.last') }}"
-                },
-                aria: {
-                    sortAscending: "{{ trans('datatables.companies.sortAscending') }}",
-                    sortDescending: "{{ trans('datatables.companies.sortDescending') }}"
                 }
             }
         });

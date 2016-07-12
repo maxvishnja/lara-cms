@@ -95,21 +95,21 @@
                     extend: "csv",
                     className: "btn-sm btn-info",
                     exportOptions: {
-                        columns: [ 0, 1, 2, 3, 4, 5 ]
+                        columns: [0, 1, 2, 3, 4, 5]
                     }
                 },
                 {
                     extend: "excel",
                     className: "btn-sm btn-info",
                     exportOptions: {
-                        columns: [ 0, 1, 2, 3, 4, 5 ]
+                        columns: [0, 1, 2, 3, 4, 5]
                     }
                 },
                 {
                     extend: "print",
                     className: "btn-sm btn-info",
                     exportOptions: {
-                        columns: [ 0, 1, 2, 3, 4, 5 ]
+                        columns: [0, 1, 2, 3, 4, 5]
                     }
                 }
             ],
@@ -122,7 +122,12 @@
                 {"width": "14%"},
                 {"width": "14%"},
                 {"width": "10%"},
-                {"width": "13%"}
+                {
+                    "width": "16%",
+                    orderable: false,
+                    searchable: false,
+                    className: "text-center"
+                }
             ],
             language: {
                 processing: "{{ trans('datatables.companies.processing') }}",
@@ -155,10 +160,10 @@
         });
 
 
-        TableManageButtons = function() {
+        TableManageButtons = function () {
             "use strict";
             return {
-                init: function() {
+                init: function () {
                     handleDataTableButtons();
                 }
             };

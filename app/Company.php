@@ -11,8 +11,8 @@ class Company extends Model
 
     protected $revisionEnabled = true;
     protected $revisionCleanup = true;
-    protected $revisionCreationsEnabled = true;
-    protected $historyLimit = 500;
+    protected $revisionCreationsEnabled = false;
+    protected $historyLimit = 200;
     protected $dontKeepRevisionOf = array(
         'date_of_contract',
         'avatar',

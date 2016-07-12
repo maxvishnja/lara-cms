@@ -117,6 +117,12 @@ class CompaniesController extends Controller
         return view('modules/companies.show', ['company' => $company, 'manager' => $manager]);
     }
 
+    /**
+     * Get history for datatables
+     *
+     * @param $companyId
+     * @return mixed
+     */
     public function getCompanyHistory($companyId)
     {
         $company = Company::findOrfail($companyId);
@@ -125,7 +131,6 @@ class CompaniesController extends Controller
         if ($getHistory) {
             foreach ($getHistory as $item) {
                 $user = $this->userRepository->retrieveById($item->user_id);
-                $date = Carbon::parse($item->created_at);
                 $obj = new \stdClass;
                 $obj->id = $item->id;
                 $obj->text = trans('revision.edit', [
@@ -139,7 +144,6 @@ class CompaniesController extends Controller
                 $dataHistory[] = $obj;
             }
         }
-        $dataHistory = array_reverse($dataHistory);
         $historyCollection = new Collection($dataHistory);
         return Datatables::of($historyCollection)->make(true);
     }

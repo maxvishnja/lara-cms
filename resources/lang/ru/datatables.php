@@ -21,5 +21,9 @@ return array(
         'sortDescending' => ': активировать для сортировки столбца по убыванию'
     ),
 
+    'history-table' => array(
+        'info' => 'Информация',
+        'time' => 'Время'
+    )
 
 );
