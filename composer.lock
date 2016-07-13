@@ -4,13 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-
-    "hash": "b70f245bc3a8051dba88f795715f101f",
-    "content-hash": "f197339208a8879a72470fbca128f4d1",
-
-    "hash": "260f42f40a56ae9d9b116d497123c72a",
-    "content-hash": "66ce3ac3dd708389b16c3cf3f9c7185f",
-
+    "hash": "bf208f5c2afc33b5aaffbcf76cf42fc7",
+    "content-hash": "b182caac99cf1a61948b31d08dc42a77",
     "packages": [
         {
             "name": "cartalyst/sentry",
@@ -2902,16 +2897,16 @@
         },
         {
             "name": "yajra/laravel-datatables-oracle",
-            "version": "v6.15.0",
+            "version": "v6.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables.git",
-                "reference": "c1bbfc01434f1ebe808f75a339a6ded5557d3664"
+                "reference": "514c671b3de1a0e0e59dc9e1e7f987eb3d67fef3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/c1bbfc01434f1ebe808f75a339a6ded5557d3664",
-                "reference": "c1bbfc01434f1ebe808f75a339a6ded5557d3664",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/514c671b3de1a0e0e59dc9e1e7f987eb3d67fef3",
+                "reference": "514c671b3de1a0e0e59dc9e1e7f987eb3d67fef3",
                 "shasum": ""
             },
             "require": {
@@ -2958,7 +2953,7 @@
                 "laravel4",
                 "laravel5"
             ],
-            "time": "2016-07-05 01:37:34"
+            "time": "2016-07-13 05:35:29"
         }
     ],
     "packages-dev": [
@@ -4285,12 +4280,8 @@
     "stability-flags": {
         "illuminate/support": 20,
         "illuminate/contracts": 20,
-
-        "laravelrus/localized-carbon": 20,
-        "jeroen-g/laravel-packager": 20
-
+        "jeroen-g/laravel-packager": 20,
         "laravelrus/localized-carbon": 20
-
     },
     "prefer-stable": false,
     "prefer-lowest": false,

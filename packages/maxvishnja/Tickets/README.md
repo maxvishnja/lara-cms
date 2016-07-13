@@ -24,6 +24,7 @@ you have to add this line on your config/app.php in Service Providers section
 Kordy\Ticketit\TicketitServiceProvider::class,
 maxvishnja\Tickets\TicketsServiceProvider::class,
 ```
+Publish the migrations: php artisan vendor:publish
 
 ## Change log
 

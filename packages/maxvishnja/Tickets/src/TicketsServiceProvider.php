@@ -15,6 +15,9 @@ class TicketsServiceProvider extends ServiceProvider
     {
         require __DIR__ . '/Http/routes.php';
         $this->loadViewsFrom(__DIR__.'/resources/views', 'Tickets');
+        $this->loadTranslationsFrom(__DIR__.'/resources/lang', 'Tickets');
+        $this->publishes([__DIR__ . '/database/' => base_path("database")], 'database');
+
     }
 
     /**

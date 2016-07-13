@@ -158,7 +158,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Kordy\Ticketit\TicketitServiceProvider::class,
         maxvishnja\Tickets\TicketsServiceProvider::class,
         Sentinel\SentinelServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
