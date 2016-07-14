@@ -6,13 +6,12 @@
         "impalago",
         "tasksManager"
     ],
-    "homepage": "https://github.com/impalago/tasksManager",
+    "homepage": "",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": ":author_website",
+            "name": ":Ivan Kolesnikov",
+            "email": ":impalago@gmail.com",
             "role": "Developer"
         }
     ],

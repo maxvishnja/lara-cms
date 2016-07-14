@@ -4,7 +4,7 @@ namespace impalago\tasksManager;
 
 use Illuminate\Support\ServiceProvider;
 
-class tasksManagerServiceProvider extends ServiceProvider
+class TasksManagerServiceProvider extends ServiceProvider
 {
     /**
      * Perform post-registration booting of services.
@@ -13,7 +13,7 @@ class tasksManagerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        include __DIR__.'/Http/routes.php';
     }
 
     /**
