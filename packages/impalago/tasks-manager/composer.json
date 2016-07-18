@@ -1,17 +1,18 @@
 {
-    "name": "impalago/tasksManager",
+    "name": "impalago/tasks-manager",
     "type": "library",
     "description": ":package_description",
     "keywords": [
         "impalago",
-        "tasksManager"
+        "tasks-manager"
     ],
-    "homepage": "",
+    "homepage": "https://github.com/impalago/tasks-manager",
     "license": "MIT",
+    "version": "1.0.0",
     "authors": [
         {
-            "name": ":Ivan Kolesnikov",
-            "email": ":impalago@gmail.com",
+            "name": "Ivan Kolesnikov",
+            "email": "impalago@gmail.com",
             "role": "Developer"
         }
     ],
@@ -26,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "impalago\\tasksManager\\": "src"
+            "Impalago\\TasksManager\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "impalago\\tasksManager\\": "tests"
+            "Impalago\\TasksManager\\": "tests"
         }
     },
     "scripts": {

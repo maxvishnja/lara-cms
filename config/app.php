@@ -158,7 +158,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        impalago\tasksManager\TasksManagerServiceProvider::class,
+        Impalago\TasksManager\TasksManagerServiceProvider::class,
+
         maxvishnja\Tickets\TicketsServiceProvider::class,
         Sentinel\SentinelServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,

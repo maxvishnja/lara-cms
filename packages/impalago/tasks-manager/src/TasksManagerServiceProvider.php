@@ -1,6 +1,6 @@
 <?php
 
-namespace impalago\tasksManager;
+namespace Impalago\TasksManager;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -13,7 +13,7 @@ class TasksManagerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        include __DIR__.'/Http/routes.php';
+        //
     }
 
     /**

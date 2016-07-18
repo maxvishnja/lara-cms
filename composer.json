@@ -4,6 +4,12 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/impalago/tasks-manager"
+        }
+    ],
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
@@ -16,7 +22,8 @@
         "yajra/laravel-datatables-oracle": "^6.15",
         "venturecraft/revisionable": "1.*",
         "jeroen-g/laravel-packager" : "dev-master",
-        "laravelrus/localized-carbon": "dev-master"
+        "laravelrus/localized-carbon": "dev-master",
+        "impalago/tasks-manager": "*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -32,8 +39,7 @@
 
         ],
         "psr-4": {
-            "impalago\\tasksManager\\": "packages/impalago/tasksManager/src",
-            
+            "impalago\\tasks-manager\\": "packages/impalago/tasks-manager/src",
             "App\\": "app/",
             "maxvishnja\\Tickets\\": "packages/maxvishnja/Tickets/src",
             "Sentinel\\": "packages/rydurham/sentinel/src"

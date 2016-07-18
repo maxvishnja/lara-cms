@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f75b14d96c0dda852bfd461676d54380",
-    "content-hash": "b182caac99cf1a61948b31d08dc42a77",
+    "hash": "11f013c389c081aeb24a044da7b48852",
+    "content-hash": "de597deb6ca21d387583fce85e139763",
     "packages": [
         {
             "name": "cartalyst/sentry",
@@ -590,6 +590,65 @@
             "time": "2016-01-21 04:26:38"
         },
         {
+            "name": "impalago/tasks-manager",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "packages/impalago/tasks-manager",
+                "reference": "b9350bbdc302410cdf3d11ebb5ae73ad9cfc0b45",
+                "shasum": null
+            },
+            "require": {
+                "illuminate/support": "~5.1",
+                "php": "~5.5|~7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0||~5.0",
+                "scrutinizer/ocular": "~1.1",
+                "squizlabs/php_codesniffer": "~2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Impalago\\TasksManager\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Impalago\\TasksManager\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "phpunit"
+                ],
+                "format": [
+                    "phpcbf --standard=psr2 src/"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Kolesnikov",
+                    "email": "impalago@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": ":package_description",
+            "homepage": "https://github.com/impalago/tasks-manager",
+            "keywords": [
+                "impalago",
+                "tasks-manager"
+            ]
+        },
+        {
             "name": "intervention/image",
             "version": "2.3.7",
             "source": {
@@ -1073,16 +1132,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.24",
+            "version": "1.0.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "9aca859a303fdca30370f42b8c611d9cf0dedf4b"
+                "reference": "a76afa4035931be0c78ca8efc6abf3902362f437"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/9aca859a303fdca30370f42b8c611d9cf0dedf4b",
-                "reference": "9aca859a303fdca30370f42b8c611d9cf0dedf4b",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a76afa4035931be0c78ca8efc6abf3902362f437",
+                "reference": "a76afa4035931be0c78ca8efc6abf3902362f437",
                 "shasum": ""
             },
             "require": {
@@ -1095,7 +1154,7 @@
                 "ext-fileinfo": "*",
                 "mockery/mockery": "~0.9",
                 "phpspec/phpspec": "^2.2",
-                "phpunit/phpunit": "~4.8 || ~5.0"
+                "phpunit/phpunit": "~4.8"
             },
             "suggest": {
                 "ext-fileinfo": "Required for MimeType",
@@ -1152,7 +1211,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-06-03 19:11:39"
+            "time": "2016-07-18 12:22:57"
         },
         {
             "name": "league/fractal",
@@ -2897,16 +2956,16 @@
         },
         {
             "name": "yajra/laravel-datatables-oracle",
-            "version": "v6.15.1",
+            "version": "v6.15.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables.git",
-                "reference": "514c671b3de1a0e0e59dc9e1e7f987eb3d67fef3"
+                "reference": "2af423095de1a68514361e7826b187b92b15bb24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/514c671b3de1a0e0e59dc9e1e7f987eb3d67fef3",
-                "reference": "514c671b3de1a0e0e59dc9e1e7f987eb3d67fef3",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/2af423095de1a68514361e7826b187b92b15bb24",
+                "reference": "2af423095de1a68514361e7826b187b92b15bb24",
                 "shasum": ""
             },
             "require": {
@@ -2953,7 +3012,7 @@
                 "laravel4",
                 "laravel5"
             ],
-            "time": "2016-07-13 05:35:29"
+            "time": "2016-07-14 03:04:52"
         }
     ],
     "packages-dev": [
