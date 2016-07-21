@@ -24,6 +24,11 @@ class TasksManagerServiceProvider extends ServiceProvider
             __DIR__.'/../database/migrations/' => database_path('migrations')
         ]);
 
+        // php artisan vendor:publish --tag=public --force
+        $this->publishes([
+            __DIR__.'/../public' => public_path('vendor/tasks')
+        ], 'public');
+
         if (!$this->app->routesAreCached()) {
             require __DIR__ . '/Http/routes.php';
         }

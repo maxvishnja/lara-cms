@@ -11,7 +11,7 @@
 |
 */
 
-Route::group(['middleware' => ['web'], 'prefix' => 'tasks', 'namespace' => 'Impalago\TasksManager\Http\Controllers'], function () {
-    Route::resource('/', 'TasksController');
+Route::group(['middleware' => ['web'], 'namespace' => 'Impalago\TasksManager\Http\Controllers'], function () {
+    Route::resource('tasks', 'TasksController');
 });
 
