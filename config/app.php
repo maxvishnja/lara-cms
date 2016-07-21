@@ -157,7 +157,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        Impalago\TasksManager\TasksManagerServiceProvider::class,
         Sentinel\SentinelServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         'Collective\Html\HtmlServiceProvider',

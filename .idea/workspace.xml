@@ -2,34 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b6e727f-a5c6-4d8a-a23b-ab4cc1f279da" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/.editorconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/.styleci.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/CONDUCT.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/LICENSE.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/composer.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/src/Http/Controllers/TicketsController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/src/Http/routes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/src/SkeletonClass.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/src/TicketsServiceProvider.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/src/database/migrations/2015_07_22_115516_create_ticketit_tables.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/src/database/migrations/2015_07_22_123254_alter_users_table.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/src/database/migrations/2015_09_29_123456_add_completed_at_column_to_ticketit_table.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/src/database/migrations/2015_10_08_123457_create_settings_table.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/src/database/migrations/2016_01_15_002617_add_htmlcontent_to_ticketit_and_comments.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/src/database/migrations/2016_01_15_040207_enlarge_settings_columns.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/src/database/migrations/2016_01_15_120557_add_indexes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/src/resources/lang/ru/tickets.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/src/resources/views/blocks/nav.blade.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/packages/maxvishnja/Tickets/src/resources/views/index.blade.php" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/tasks.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2013_04_09_062329_create_revisions_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/impalago/tasks-manager/.editorconfig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/impalago/tasks-manager/.styleci.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/impalago/tasks-manager/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/impalago/tasks-manager/CONDUCT.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/impalago/tasks-manager/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/impalago/tasks-manager/LICENSE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/impalago/tasks-manager/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/impalago/tasks-manager/composer.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/impalago/tasks-manager/database/migrations/2016_07_20_080811_add_tasks_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/impalago/tasks-manager/database/migrations/2016_07_20_080946_add_task_user_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/impalago/tasks-manager/database/migrations/2016_07_20_081034_add_task_time_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/impalago/tasks-manager/src/Http/Controllers/TasksController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/impalago/tasks-manager/src/Http/routes.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/impalago/tasks-manager/src/TasksManagerServiceProvider.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/impalago/tasks-manager/src/config/tasks.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/impalago/tasks-manager/src/lang/ru/actions.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/impalago/tasks-manager/src/lang/ru/tasks.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/packages/impalago/tasks-manager/src/views/index.blade.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2015_07_22_115516_create_ticketit_tables.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2015_07_22_123254_alter_users_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2015_09_29_123456_add_completed_at_column_to_ticketit_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2016_01_15_002617_add_htmlcontent_to_ticketit_and_comments.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2016_01_15_040207_enlarge_settings_columns.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2016_01_15_120557_add_indexes.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2015_10_08_123457_create_settings_table.php" afterPath="$PROJECT_DIR$/packages/impalago/tasks-manager/database/migrations/2016_07_20_081018_add_task_file_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/mail.php" afterPath="$PROJECT_DIR$/config/mail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/SentryUserSeederCus.php" afterPath="$PROJECT_DIR$/database/seeds/SentryUserSeederCus.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
     </list>
     <ignored path="crm.local.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,16 +57,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/kordy/ticketit/src/Views/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-27.208334">
-              <caret line="57" column="72" selection-start-line="57" selection-start-column="72" selection-end-line="57" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/kordy/ticketit/src/routes.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -135,11 +131,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/kordy/ticketit/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17584994">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state vertical-scroll-proportion="-16.11111">
+              <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -148,8 +144,18 @@
       <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.25">
-              <caret line="18" column="50" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="50" />
+            <state vertical-scroll-proportion="-1.9166666">
+              <caret line="24" column="52" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/app.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.47313085">
+              <caret line="158" column="50" selection-start-line="158" selection-start-column="50" selection-end-line="158" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -195,8 +201,6 @@
         <option value="$PROJECT_DIR$/vendor/kordy/ticketit/src/Translations/ru/admin.php" />
         <option value="$PROJECT_DIR$/vendor/kordy/ticketit/src/Translations/ru/install.php" />
         <option value="$PROJECT_DIR$/vendor/kordy/ticketit/src/Views/tickets/show.blade.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/vendor/kordy/ticketit/src/Views/tickets/partials/ticket_body.blade.php" />
         <option value="$PROJECT_DIR$/vendor/kordy/ticketit/src/Controllers/NotificationsController.php" />
         <option value="$PROJECT_DIR$/vendor/kordy/ticketit/src/Views/tickets/edit.blade.php" />
@@ -214,6 +218,8 @@
         <option value="$PROJECT_DIR$/vendor/kordy/ticketit/src/Views/tickets/partials/datatable.blade.php" />
         <option value="$PROJECT_DIR$/vendor/kordy/ticketit/src/Views/index.blade.php" />
         <option value="$PROJECT_DIR$/vendor/kordy/ticketit/README.md" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/config/app.php" />
       </list>
     </option>
   </component>
@@ -974,130 +980,6 @@
               <option name="myItemId" value="packages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rydurham" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sentinel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crm.local" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crm.local" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="packages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rydurham" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sentinel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crm.local" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crm.local" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="packages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rydurham" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sentinel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crm.local" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crm.local" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="packages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rydurham" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sentinel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Middleware" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crm.local" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crm.local" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="packages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rydurham" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sentinel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1372,13 +1254,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/kordy/ticketit/src/Translations/ru/settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="50.583332">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/kordy/ticketit/src/Controllers/NotificationsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-25.666666">
@@ -1760,14 +1635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25">
-          <caret line="18" column="50" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/kordy/ticketit/src/Controllers/InstallController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-96.875">
@@ -1788,8 +1655,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/kordy/ticketit/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17584994">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state vertical-scroll-proportion="-16.11111">
+          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9166666">
+          <caret line="24" column="52" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47313085">
+          <caret line="158" column="50" selection-start-line="158" selection-start-column="50" selection-end-line="158" selection-end-column="50" />
           <folding />
         </state>
       </provider>
