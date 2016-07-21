@@ -28,7 +28,9 @@ elixir(function(mix) {
             '/bootstrap-progressbar/bootstrap-progressbar.min.js'
         ], "public/js/dependencies.js", "resources/assets/template/vendors")
         .scripts([
-            'jquery-confirm/dist/jquery-confirm.min.js'
+            'jquery-confirm/dist/jquery-confirm.min.js',
+            'magnific-popup/dist/jquery.magnific-popup.min.js',
+            'select2/dist/js/select2.min.js'
         ], "public/js/modules.js", "node_modules")
         .scripts([
             'template/build/js/custom.min.js',
@@ -73,7 +75,9 @@ elixir(function(mix) {
         ], 'public/css/datatables.css', "resources/assets/")
 
         .styles([
-            'node_modules/jquery-confirm/dist/jquery-confirm.min.css'
+            'node_modules/jquery-confirm/dist/jquery-confirm.min.css',
+            'magnific-popup/dist/magnific-popup.css',
+            'select2/dist/css/select2.css'
         ], 'public/css/modules.css', "node_modules")
         .browserSync({
             files: [

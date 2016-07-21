@@ -14,5 +14,12 @@ return [
     */
 
     'main-title' => 'Задачи',
+    'create-title' => 'Новая задача',
+
+    'form-fields' => [
+        'name' => 'Введите название задачи',
+        'description' => 'Описание задачи',
+        'responsible' => 'Ответственный',
+    ]
 
 ];

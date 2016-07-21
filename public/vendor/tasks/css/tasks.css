@@ -1,0 +1,12 @@
+.tasks-index .page-header {
+    margin-top: 0;
+}
+
+.white-popup {
+    position: relative;
+    background: #FFF;
+    padding: 20px;
+    width: auto;
+    max-width: 1400px;
+    margin: 20px auto;
+}
