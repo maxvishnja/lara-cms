@@ -39,7 +39,7 @@
 
         ],
         "psr-4": {
-            "impalago\\tasks-manager\\": "packages/impalago/tasks-manager/src",
+            "Impalago\\TasksManager\\": "packages/impalago/tasks-manager/src",
             "App\\": "app/",
             "maxvishnja\\Tickets\\": "packages/maxvishnja/Tickets/src",
             "Sentinel\\": "packages/rydurham/sentinel/src"

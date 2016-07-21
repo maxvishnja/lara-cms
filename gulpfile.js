@@ -76,6 +76,12 @@ elixir(function(mix) {
             'node_modules/jquery-confirm/dist/jquery-confirm.min.css'
         ], 'public/css/modules.css', "node_modules")
         .browserSync({
+            files: [
+                'app/**/*',
+                'resources/views/**/*',
+                'public/js/**/*',
+                'packages/**/*'
+            ],
             proxy: 'local-crm.dev'
         });
 });
