@@ -20,6 +20,7 @@ class AddTaskUserTable extends Migration
         });
 
         Schema::table('task_user', function (Blueprint $table) {
+            $table->foreign('task_id')->references('id')->on('tasks')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }

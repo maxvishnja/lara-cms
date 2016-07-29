@@ -26,6 +26,7 @@ return [
     'edit-logo' => 'Изменить логотоп',
     'actions' => 'Действия',
     'reset' => 'Сбросить',
+    'add-files' => 'Добавить файлы',
 
     'nothing-selected' => 'Ничего не выбрано',
 
@@ -36,6 +37,9 @@ return [
     'group-create' => '<i class="fa fa-plus-circle" aria-hidden="true"></i> Добавить группу',
     'user-create' => '<i class="fa fa-plus-circle" aria-hidden="true"></i> Добавить пользователя',
     'companies-create' => '<i class="fa fa-plus-circle" aria-hidden="true"></i> Добавить компанию',
+
+
+    'dropzone-default-message' => 'Перетащите сюда файлы для загрузки',
 
 
 ];

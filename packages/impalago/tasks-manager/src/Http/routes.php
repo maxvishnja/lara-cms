@@ -11,7 +11,13 @@
 |
 */
 
-Route::group(['middleware' => ['web'], 'namespace' => 'Impalago\TasksManager\Http\Controllers'], function () {
+Route::group(['middleware' => ['web', 'sentry.auth'], 'namespace' => 'Impalago\TasksManager\Http\Controllers'], function () {
     Route::resource('tasks', 'TasksController');
+    Route::get('tasks-data', ['before' => 'csrf', 'as' => 'tasks.data', 'uses' => 'TasksController@getData']);
+
+    Route::post('tasks-store-files/{id}', ['as' => 'tasks.store-files', 'uses' => 'TasksController@storeFiles']);
+
+    Route::get('tasks-download-file/{filename}', ['as' => 'tasks.download-file', 'uses' => 'TaskFileController@downloadFile'])->where('filename', '[A-Za-z0-9\-\_\.]+');
+
 });
 

@@ -25,12 +25,14 @@ elixir(function(mix) {
             '/pnotify/dist/pnotify.nonblock.js',
             '/moment/moment.js',
             '/bootstrap-daterangepicker/daterangepicker.js',
-            '/bootstrap-progressbar/bootstrap-progressbar.min.js'
+            '/bootstrap-progressbar/bootstrap-progressbar.min.js',
+            '/dropzone/dist/min/dropzone.min.js'
         ], "public/js/dependencies.js", "resources/assets/template/vendors")
         .scripts([
             'jquery-confirm/dist/jquery-confirm.min.js',
             'magnific-popup/dist/jquery.magnific-popup.min.js',
-            'select2/dist/js/select2.min.js'
+            'select2/dist/js/select2.min.js',
+            'jquery-datetimepicker/build/jquery.datetimepicker.full.min.js',
         ], "public/js/modules.js", "node_modules")
         .scripts([
             'template/build/js/custom.min.js',
@@ -48,6 +50,7 @@ elixir(function(mix) {
             'template/vendors/pnotify/dist/pnotify.buttons.css',
             'template/vendors/pnotify/dist/pnotify.nonblock.css',
             'template/build/css/custom.min.css',
+            'template/vendors/dropzone/dist/min/dropzone.min.css',
             'css/app.css'
         ], 'public/css/app.css', "resources/assets/")
 
@@ -77,7 +80,8 @@ elixir(function(mix) {
         .styles([
             'node_modules/jquery-confirm/dist/jquery-confirm.min.css',
             'magnific-popup/dist/magnific-popup.css',
-            'select2/dist/css/select2.css'
+            'select2/dist/css/select2.css',
+            'jquery-datetimepicker/build/jquery.datetimepicker.min.css',
         ], 'public/css/modules.css', "node_modules")
         .browserSync({
             files: [

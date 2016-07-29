@@ -164,7 +164,7 @@ return [
         Yajra\Datatables\DatatablesServiceProvider::class,
         'Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider',
         JeroenG\Packager\PackagerServiceProvider::class,
-        Kordy\Ticketit\TicketitServiceProvider::class,
+//        Kordy\Ticketit\TicketitServiceProvider::class,
     ],
 
     /*

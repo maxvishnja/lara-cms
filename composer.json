@@ -23,7 +23,7 @@
         "venturecraft/revisionable": "1.*",
         "jeroen-g/laravel-packager" : "dev-master",
         "laravelrus/localized-carbon": "dev-master",
-        "kordy/ticketit": "0.*"
+        "kordy/ticketit": "0.*",
         "impalago/tasks-manager": "*"
     },
     "require-dev": {

@@ -5,7 +5,10 @@
                 <h3>{{ trans('tasks::tasks.create-title') }}</h3>
             </div>
 
-            {!! Form::open(['route' => 'tasks.store', 'class' => 'form-horizontal']) !!}
+            <h4 class="mt20">Прикрепить файлы</h4>
+            <hr>
+
+            {!! Form::open(['route' => 'tasks.store', 'class' => '']) !!}
 
             @include('tasks::fieldsForm')
 

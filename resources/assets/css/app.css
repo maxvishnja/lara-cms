@@ -11,6 +11,10 @@
     margin-bottom: 20px;
 }
 
+.mt20 {
+    margin-top: 20px;
+}
+
 .login_content form input[type="submit"]{
      float: none;
 }

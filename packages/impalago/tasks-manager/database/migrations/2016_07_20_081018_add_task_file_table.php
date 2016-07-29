@@ -15,7 +15,8 @@ class AddTaskFileTable extends Migration
         Schema::create('task_file', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('task_id')->unsigned();
-            $table->text('file');
+            $table->string('file');
+            $table->string('original_name');
             $table->timestamps();
         });
 

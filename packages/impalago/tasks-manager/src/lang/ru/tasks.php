@@ -15,11 +15,32 @@ return [
 
     'main-title' => 'Задачи',
     'create-title' => 'Новая задача',
+    'edit-title' => 'Изменить задачу',
 
     'form-fields' => [
         'name' => 'Введите название задачи',
+        'company' => 'Выберите компанию',
         'description' => 'Описание задачи',
         'responsible' => 'Ответственный',
-    ]
+        'responsible-no-result' => 'Пользователь с таким именем не найден',
+        'priority' => 'Приоритет',
+        'deadline' => 'Крайний срок',
+    ],
+
+    'table-head' => [
+        'name' => 'Название',
+        'priority' => 'Приоритет',
+        'deadline' => 'Крайний срок',
+        'initiator' => 'Постановщик',
+        'actions' => 'Действия',
+    ],
+
+    'message' => [
+        'create' => '',
+        'update' => '',
+        'destroy' => ''
+    ],
+
+    'datepicker-locale' => 'ru'
 
 ];

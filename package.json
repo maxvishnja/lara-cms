@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "jquery-confirm": "^1.5.1",
+    "jquery-datetimepicker": "^2.5.4",
     "lodash": "^4.13.1",
     "lodash._baseclone": "^4.5.7",
     "magnific-popup": "^1.1.0",
