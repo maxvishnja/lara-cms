@@ -21,12 +21,12 @@ class TasksManagerServiceProvider extends ServiceProvider
             __DIR__ . '/lang' => resource_path('lang/vendor/tasks'),
             __DIR__ . '/views' => resource_path('views/vendor/tasks'),
             __DIR__ . '/config/tasks.php' => config_path('tasks.php'),
-            __DIR__.'/../database/migrations/' => database_path('migrations')
+            __DIR__ . '/../database/migrations/' => database_path('migrations')
         ]);
 
         // php artisan vendor:publish --tag=public --force
         $this->publishes([
-            __DIR__.'/../public' => public_path('vendor/tasks')
+            __DIR__ . '/../public' => public_path('vendor/tasks')
         ], 'public');
 
         if (!$this->app->routesAreCached()) {

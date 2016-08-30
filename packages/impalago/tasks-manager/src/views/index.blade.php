@@ -62,8 +62,6 @@
                     $('#deadline').datetimepicker({
                         format: 'Y-m-d H:i',
                     });
-
-                    $(".dropzone").dropzone();
                 }
             }
         });
@@ -142,11 +140,31 @@
                                 format: 'Y-m-d H:i',
                             });
 
-                            $(".dropzone").dropzone({
+                            var myDropzone = new Dropzone(".dropzone", {
                                 dictDefaultMessage: '{{ trans('actions.dropzone-default-message') }}',
                                 dictRemoveFile: '{{ trans('actions.delete') }}',
                                 addRemoveLinks: true,
                                 clickable: true
+                            });
+
+                            myDropzone.on("removedfile", function(file) {
+                                var fileId = file.xhr.response;
+                                destroyFile(fileId);
+                            });
+
+                            $('.file-destroy').on('click', function() {
+                                var fileId = $(this).data('file-id');
+                                var tr = $(this).closest('tr');
+                                $.confirm({
+                                    title: '{{ trans('actions.confirm-title') }}',
+                                    content: ' ',
+                                    confirmButton: '{{ trans('actions.confirm-but-yes') }}',
+                                    cancelButton: '{{ trans('actions.confirm-but-no') }}',
+                                    confirm: function () {
+                                        destroyFile(fileId);
+                                        tr.remove();
+                                    }
+                                });
                             });
                         }
                     }
@@ -154,19 +172,6 @@
             }
         });
 
-//        TableManageButtons = function () {
-//            "use strict";
-//            return {
-//                init: function () {
-//                    handleDataTableButtons();
-//                }
-//            };
-//        }();
-
-//        $('#type_id, #manager').on('change', function (e) {
-//            table.draw();
-//            e.preventDefault();
-//        });
 
         $('#tasks-table tbody').on('click', '.task-item', function () {
             table.$('.task-item.selected').removeClass('selected');
@@ -194,6 +199,16 @@
                 }
             });
         });
+
+        function destroyFile (fileId) {
+            $.ajax({
+                url: '{{ route('tasks.destroy-drop-file') }}/' + fileId,
+                type: 'post',
+                success: function (data) {
+                    table.draw();
+                }
+            });
+        }
     });
 </script>
 @endpush

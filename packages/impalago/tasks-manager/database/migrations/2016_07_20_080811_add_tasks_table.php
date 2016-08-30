@@ -21,6 +21,7 @@ class AddTasksTable extends Migration
             $table->integer('status');
             $table->integer('priority');
             $table->timestamp('deadline');
+            $table->string('spent_time');
             $table->timestamps();
         });
 

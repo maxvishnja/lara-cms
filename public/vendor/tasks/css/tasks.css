@@ -56,11 +56,47 @@
 
 .dropzone {
     margin: 20px 0;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    border-radius: 6px;
-    background: rgba(102, 102, 102, 0.12);
+    border: 2px dotted rgba(0,0,0,0.3);
+    background: rgba(102, 102, 102, 0.05);
+    color: #0b66c3;
+    font-size: 15px;
 }
 
 .dropzone .dz-preview.dz-image-preview {
     background: none;
+}
+
+.mt0 {
+    margin-top: 0;
+}
+
+.files-table tr td:last-child {
+    width: 90px;
+}
+
+.task-actions {
+    margin-bottom: 20px;
+}
+
+.task-actions a {
+    border-radius:2px;
+    background: #bbed21;
+    border-color: #d2f95f;
+    color: #535c69;
+    text-transform: uppercase;;
+    font-weight: bold;
+    transition: background-color .2s linear,color .2s linear;
+    text-shadow: none;
+    font-size: 13px;
+    padding: 10px 25px 9px;
+}
+
+.task-actions a:hover {
+    background: #d2f95f;
+    color: #535c69;
+    border-color: #d2f95f;
+}
+
+.hide {
+    display: none;
 }

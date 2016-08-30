@@ -1,4 +1,4 @@
-<div class="container white-popup" >
+<div class="container white-popup">
     <div class="row">
         <div class="col-md-12">
             <div class="page-header">

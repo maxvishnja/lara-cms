@@ -79,36 +79,6 @@ class TasksController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function storeFiles(Request $request, $id)
-    {
-        $file = $request->file('file');
-
-        $destinationPath = storage_path() . '/app/upload/tasks';
-        $filename = 'taskId-' . $id . '_' . time() . '.' . $file->getClientOriginalExtension();
-        $upload_success = $request->file('file')->move($destinationPath, $filename);
-
-        if ($upload_success) {
-
-            $file = new TaskFile([
-                'file' => $filename,
-                'original_name' => $file->getClientOriginalName()
-            ]);
-
-            $task = Task::find($id);
-            $task->files()->save($file);
-
-            return response()->json('success', 200);
-        } else {
-            return response()->json('error', 400);
-        }
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  int $id
@@ -214,22 +184,21 @@ class TasksController extends Controller
                 ->select([
                     'tasks.id',
                     'tasks.name',
+                    'tasks.initiator_id',
                     'tasks.priority',
                     'tasks.deadline',
                     DB::raw('concat(users.first_name, " ", users.last_name) as full_name'),
                 ]);
         } else {
             $tasks = DB::table('tasks')
-                ->leftJoin('users', 'tasks.initiator_id', '=', 'users.id')
-                ->where(function ($query) {
-                    $query->where('tasks.initiator_id', $this->userId)
-                        ->orWhere(function ($query) {
-                            $query->where('events.responsible_id', $this->userId);
-                        });
-                })
+                ->leftJoin('users', 'users.id', '=', 'tasks.initiator_id')
+                ->join('task_user', 'task_user.task_id', '=', 'tasks.id')
+                ->where('tasks.initiator_id', $this->userId)
+                ->orWhere('task_user.user_id', '=', $this->userId)
                 ->select([
                     'tasks.id',
                     'tasks.name',
+                    'tasks.initiator_id',
                     'tasks.priority',
                     'tasks.deadline',
                     DB::raw('concat(users.first_name, " ", users.last_name) as full_name'),
@@ -242,20 +211,26 @@ class TasksController extends Controller
                 return $typeArr[$task->priority];
             })
             ->addColumn('action', function ($task) {
-                return '
-                    <a class="btn btn-primary btn-xs task-popup" href="' . route("tasks.show", array($task->id), false) . '" title="' . trans("actions.view") . '">
-                        <i class="fa fa-user"> </i> ' . trans("actions.view") . '</a>
 
-                     <a class="btn btn-success btn-xs task-popup" type="button" href="' . route("tasks.edit", array($task->id), false) . '" title="' . trans("actions.edit") . '"><i class="fa fa-pencil"></i></a>
+                $buttons = '<a class="btn btn-primary btn-xs task-popup" href="' . route("tasks.show", array($task->id), false) . '" title="' . trans("actions.view") . '">
+                        <i class="fa fa-user"> </i> ' . trans("actions.view") . '</a>';
 
-                    <a class="btn btn-danger btn-xs task-destroy" href=""
-                        href="#"
-                        data-company-id="' . $task->id . '"
-                        title="' . trans("actions.delete") . '">
-                        <i class="fa fa-remove"> </i>
-                    </a>
-                ';
+                if ($task->initiator_id == $this->userId) {
+                    $buttons .= '
+                        <a class="btn btn-success btn-xs task-popup" type="button" href="' . route("tasks.edit", array($task->id), false) . '" title="' . trans("actions.edit") . '"><i class="fa fa-pencil"></i></a>
+
+                        <a class="btn btn-danger btn-xs task-destroy" href=""
+                            href="#"
+                            data-company-id="' . $task->id . '"
+                            title="' . trans("actions.delete") . '">
+                            <i class="fa fa-remove"> </i>
+                        </a>
+                    ';
+                }
+
+                return $buttons;
             })
+            ->removeColumn('initiator_id')
             ->setRowClass('task-item')
             ->setRowAttr([
                 'data-task-id' => '{{$id}}',

@@ -11,13 +11,27 @@ class Task extends Model
         'company_id', 'name', 'description', 'status', 'priority', 'deadline'
     ];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function users()
     {
         return $this->belongsToMany('App\User');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function files()
     {
-        return $this->hasMany('Impalago\TasksManager\Models\TaskFile');
+        return $this->hasMany('Impalago\TasksManager\Models\FileTask');
+    }
+
+    /**
+     * Получить комментарии к записи.
+     */
+    public function time()
+    {
+        return $this->hasMany('Impalago\TasksManager\Models\TaskTime');
     }
 }
